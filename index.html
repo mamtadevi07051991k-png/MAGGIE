@@ -1,0 +1,3237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <meta name="theme-color" content="#fffaf0">
+
+  <title>Maggie Lover Cafe</title>
+
+  <link rel="stylesheet" href="style.css">
+
+<style id="maggie-universal-bottom-navigation">
+/* Universal fixed navigation: identical on every customer page */
+html{scroll-padding-bottom:calc(76px + env(safe-area-inset-bottom)) !important;}
+body{padding-bottom:calc(88px + env(safe-area-inset-bottom)) !important;}
+.bottom-nav{position:fixed !important;left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;transform:none !important;width:100% !important;max-width:none !important;height:calc(66px + env(safe-area-inset-bottom)) !important;min-height:calc(66px + env(safe-area-inset-bottom)) !important;box-sizing:border-box !important;display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-around !important;gap:0 !important;margin:0 !important;padding:5px 4px calc(5px + env(safe-area-inset-bottom)) !important;background:rgba(255,255,255,.98) !important;border-top:1px solid #eadfd3 !important;box-shadow:0 -4px 18px rgba(0,0,0,.09) !important;z-index:2147483000 !important;visibility:visible !important;opacity:1 !important;pointer-events:auto !important;}
+.bottom-nav .nav-item{position:static !important;flex:1 1 20% !important;width:20% !important;max-width:20% !important;min-width:0 !important;height:54px !important;min-height:54px !important;margin:0 !important;padding:5px 0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;gap:3px !important;box-sizing:border-box !important;text-decoration:none !important;border:0 !important;border-radius:10px !important;background:transparent !important;color:#777 !important;font-size:11px !important;line-height:1.1 !important;white-space:nowrap !important;transform:none !important;}
+.bottom-nav .nav-item svg{display:block !important;width:21px !important;height:21px !important;min-width:21px !important;min-height:21px !important;flex:0 0 21px !important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block !important;margin:0 !important;padding:0 !important;font-size:10px !important;line-height:12px !important;font-weight:500 !important;}
+.bottom-nav .nav-item.active{color:#e56b24 !important;background:transparent !important;font-weight:700 !important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700 !important;}
+@media(min-width:700px){.bottom-nav{left:50% !important;right:auto !important;transform:translateX(-50%) !important;width:min(100%,520px) !important;border-left:1px solid #eadfd3 !important;border-right:1px solid #eadfd3 !important;border-radius:16px 16px 0 0 !important;}}
+</style>
+<!-- maggie-nav-prefetch -->
+
+<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="categories.html" as="document">
+<link rel="prefetch" href="cart.html" as="document">
+<link rel="prefetch" href="orders.html" as="document">
+<link rel="prefetch" href="account.html" as="document">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MAGGIE LOVER APP
+       PART 1 — INDEX HTML
+       ===================================================== -->
+
+
+  <!-- ================= SPLASH SCREEN ================= -->
+
+  <section id="splashScreen" class="splash-screen">
+
+    <div class="splash-content">
+
+      <div class="category-image">
+
+                <img
+                    src="assets/products/logo.webP"
+                    alt="logo"
+                    loading="eager">
+
+            </div>
+
+
+      <h1>Maggi Lover</h1>
+
+      <p>Spicy Corner</p>
+
+      <div class="splash-loader">
+        <span></span>
+      </div>
+
+      <small>World Famous Handi Maggi</small>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================================
+     MAGGIE LOVER LOGIN SYSTEM
+================================ -->
+
+<div id="loginScreen" class="login-screen ">
+
+    <div class="login-box">
+
+        <div class="category-image">
+
+                <img
+                    src="assets/products/logo.webP"
+                    alt="Pizza"
+                    loading="lazy">
+
+        </div>
+
+        <h1>Maggi Lover</h1>
+
+        <p class="login-tagline">
+            World Most Famous Handi Maggi
+        </p>
+
+        <h2>Create Account</h2>
+
+        <p class="login-subtitle">
+            Create your account to continue
+        </p>
+
+
+        <div id="loginError" class="login-error"></div>
+
+
+        <form id="loginForm">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                id="loginName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="loginPhone"
+                placeholder="Enter your phone number"
+                maxlength="10"
+                inputmode="numeric"
+                required
+            >
+
+
+            <label>
+                Email
+                <span>(Optional)</span>
+            </label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+  <!-- ================= HOME PAGE ================= -->
+  
+  <main id="homePage" class="home-page hidden">
+
+ <!-- ================= TOP HEADER ================= -->
+
+    <header class="top-header">
+
+      <div class="location-area">
+
+        <div class="brand-title">
+          <h2>Maggi Lover Cafe</h2>
+
+          <div class="near Apr mall">
+            <span>Near→Apr mall</span>
+          </div>
+        </div>
+
+      </div>
+
+      
+     <!-- Maggi Lover Cafe Logo -->
+    <div class="cafe-logo">
+        <img
+            src="assets/products/logo.webP"
+            alt="Maggie Lover Cafe"
+        >
+    </div>
+      
+      <!-- PROFILE INITIAL -->
+
+      <button
+        type="button"
+        id="profileButton"
+        class="profile-circle"
+        aria-label="Open Account"
+        onclick= "window.location.href =
+                  'account.html'"
+      >
+        <span id="profileInitial">M</span>
+      </button>
+
+    </header>
+  
+          
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+      <button
+        type="button"
+        id="searchButton"
+        class="search-bar"
+      >
+     <script>
+document.querySelector('.search-bar').addEventListener('click', function () {
+    window.location.href = 'search.html';
+});
+     </script>
+        <span class="search-icon">⌕</span>
+
+        <span class="search-placeholder">
+          Search for Maggi, Pasta, Momos...
+        </span>
+
+      </button>
+
+    </section>
+
+
+    <!-- ================================
+     PART 3 — CATEGORY SECTION
+================================= -->
+
+<section class="home-categories" id="homeCategories">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-kicker">EXPLORE</span>
+            <h2>Categories</h2>
+        </div>
+
+        <button
+            class="see-all-btn"
+            onclick= "window.location.href =
+                  'categories.html'">
+            See All
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <div class="category-scroll">
+
+
+        <!-- Handi Maggi -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+            <div class="category-image">
+
+                <img
+                    src="assets/products/veg-handi-maggi.webp",
+                    alt="assets/products/veg-handi-maggi.webp"
+                    loading="lazy">
+
+            </div>
+
+            <span>Handi Maggi</span>
+
+           <button
+            class="see-all-btn"
+            onclick= "window.location.href =
+                  'categories.html'">
+           </button>
+          
+        </button>
+
+
+        <!-- Premium Handi Maggi -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/paneer-cheese-handi-maggi.webp"
+                    alt="Premium Handi Maggi"
+                    loading="lazy">
+
+            </div>
+
+            <span>Premium Handi</span>
+
+        </button>
+
+
+        <!-- Dry Maggi -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/butter-maggi.webp"
+                    alt="Dry Lover Maggi"
+                    loading="lazy">
+
+            </div>
+
+            <span>Dry Maggi</span>
+
+        </button>
+
+
+        <!-- Maggi Bowl -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/chinese-maggi.webp"
+                    alt="Maggi Bowl"
+                    loading="lazy">
+
+            </div>
+
+            <span>Maggi Bowl</span>
+
+        </button>
+
+
+        <!-- Classic Pasta -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/pasta.webp"
+                    alt="Classic Pasta"
+                    loading="lazy">
+
+            </div>
+
+            <span>Classic Pasta</span>
+
+        </button>
+
+
+        <!-- Premium Pasta -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/volcano-cheese-pasta.webp"
+                    alt="Premium Pasta"
+                    loading="lazy">
+
+            </div>
+
+            <span>Premium Pasta</span>
+
+        </button>
+
+
+        <!-- Paneer Lover -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/butter-paneer.webp"
+                    alt="Paneer Lover"
+                    loading="lazy">
+
+            </div>
+
+            <span>Paneer Lover</span>
+
+        </button>
+
+
+        <!-- Manchurian Lover -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/handi-manchurian.webp"
+                    alt="Manchurian Lover"
+                    loading="lazy">
+
+            </div>
+
+            <span>Manchurian</span>
+
+        </button>
+
+
+        <!-- Aata Momos -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/gravy-momo.webp"
+                    alt="Aata Momos"
+                    loading="lazy">
+
+            </div>
+
+            <span>Aata Momos</span>
+
+        </button>
+
+
+        <!-- Pizza -->
+
+        <button
+            class="category-card"
+            onclick="window.location.href =
+                  'categories.html'">
+
+            <div class="category-image">
+
+                <img
+                    src="assets/products/skull-pizza.webp"
+                    alt="Pizza"
+                    loading="lazy">
+
+            </div>
+
+            <span>Pizza</span>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+  <!-- =========================================
+     PART 4 — HERO BANNER + INSTAGRAM
+========================================= -->
+
+<section class="hero-section" id="heroSection">
+
+    <div class="hero-slider" id="heroSlider">
+
+        <div class="hero-slide active">
+            <img
+                src="assets/products/veg-handi-maggi.webp"
+                alt="World Famous Handi Maggi"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-small">MAGGIE LOVER • GAYA</span>
+
+                <h1>
+                    WORLD FAMOUS<br>
+                    HANDI MAGGI
+                </h1>
+
+                <p>
+                    Hot • Spicy • Cheesy • Delicious
+                </p>
+
+                <button
+                    onclick="window.location.href =
+                  'categories.html'">
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="hero-slide">
+            <img
+                src="assets/products/loaded-cheese-pasta.webp"
+                alt="Premium Pasta"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-small">PREMIUM COLLECTION</span>
+
+                <h1>
+                    LOADED<br>
+                    CHEESE PASTA
+                </h1>
+
+                <p>
+                    Rich • Creamy • Cheesy
+                </p>
+
+                <button
+                    onclick="window.location.href =
+                  'categories.html'">
+                    Order Now
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="hero-slide">
+            <img
+                src="assets/products/kurkure-momo.webp"
+                alt="Aata Momos"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-small">MOMOS LOVER</span>
+
+                <h1>
+                    SPECIAL<br>
+                    FRY MOMOS
+                </h1>
+
+                <p>
+                    Fresh • Hot • Delicious
+                </p>
+
+                <button
+                    onclick="window.location.href =
+                  'categories.html'">
+                    Explore
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="hero-slide">
+            <img
+                src="assets/products/skull-pizza.webp"
+                alt="Maggi Pizza"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-small">PIZZA LOVERS</span>
+
+                <h1>
+                    Skull<br>
+                    PIZZA
+                </h1>
+
+                <p>
+                    Extra Cheese • Extra Taste
+                </p>
+
+                <button
+                    onclick="window.location.href =
+                  'categories.html'">
+                  DISCOVER
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Slider dots -->
+
+    <div class="hero-dots" id="heroDots">
+
+        <button
+            class="hero-dot active"
+            data-slide="0">
+        </button>
+
+        <button
+            class="hero-dot"
+            data-slide="1">
+        </button>
+
+        <button
+            class="hero-dot"
+            data-slide="2">
+        </button>
+
+        <button
+            class="hero-dot"
+            data-slide="3">
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INSTAGRAM BRAND SECTION
+========================================= -->
+
+<div class="instagram-card">
+
+    <div class="instagram-profile">
+
+        <div class="instagram-avatar">
+            <img src="assets/products/logo.webP" alt="Maggie Lover">
+        </div>
+
+        <div class="instagram-info">
+
+            <div class="instagram-name-row">
+                <strong>@maggi_lover_gaya</strong>
+                <span class="verified-badge">✓</span>
+            </div>
+
+            <span>Maggi Lover – Spicy Corner</span>
+            <small>Gaya, Bihar</small>
+
+        </div>
+
+    </div>
+
+
+    <div class="instagram-stats">
+
+        <div>
+            <strong>119K+</strong>
+            <span>Followers</span>
+        </div>
+
+        <div>
+            <strong>100+</strong>
+            <span>Products</span>
+        </div>
+
+        <div>
+            <strong>4.8★</strong>
+            <span>Rating</span>
+        </div>
+
+    </div>
+
+
+    <a
+        class="instagram-button"
+        href="https://www.instagram.com/maggi_lover_gaya?igsi=MTN4eGNpZW0xMXRyOA=="
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <span>Instagram</span>
+        <span>↗</span>
+
+    </a>
+
+</div>
+
+    <!-- ================================
+     MAGGIE LOVER PRODUCT SECTIONS
+================================= -->
+
+<div id="homeProductSections"></div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const container =
+        document.getElementById("homeProductSections");
+
+    if (!container) {
+        console.error("Product container not found");
+        return;
+    }
+
+    if (!Array.isArray(products)) {
+        console.error("Products data not found");
+        return;
+    }
+
+
+    /* =================================
+       CATEGORY CONFIGURATION
+    ================================= */
+
+    const categories = [
+        {   name: "Trending now",
+            subtitle: "you also may like"
+        },
+        {
+            name: "World Famous Handi Maggi",
+            subtitle: "Our Signature Handi Collection"
+        },
+        {
+            name: "Premium Handi Maggi",
+            subtitle: "Premium Handi Experience"
+        },
+        {
+            name: "Maggi Bowl",
+            subtitle: "Classic Maggi Favourites"
+        },
+        {
+            name: "Dry Lover Maggi",
+            subtitle: "For Dry Maggi Lovers"
+        },
+        {
+            name: "Classic Pasta",
+            subtitle: "Delicious Pasta Collection"
+        },
+        {
+            name: "Premium Pasta",
+            subtitle: "Premium Pasta Specials"
+        },
+        {
+            name: "Paneer Lover",
+            subtitle: "Made For Paneer Lovers"
+        },
+        {
+            name: "Manchurian Lover",
+            subtitle: "Hot & Delicious Manchurian"
+        },
+        {
+            name: "Aata Momos",
+            subtitle: "Fresh & Delicious Momos"
+        },
+        {
+            name: "Pizza",
+            subtitle: "Cheesy Pizza Collection"
+        }
+    ];
+
+
+    /* =================================
+       CREATE PRODUCT CARD
+    ================================= */
+
+    function createProductCard(product) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "ml-product-card";
+
+
+        card.innerHTML = `
+
+            <div class="ml-product-image-box">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    class="ml-product-image"
+                    loading="lazy"
+                >
+
+                <button
+                    class="ml-add-button"
+                    type="button">
+                    +
+                </button>
+
+            </div>
+
+
+            <div class="ml-product-info">
+
+                <div class="ml-product-rating">
+                    ★ 4.8
+                </div>
+
+                <h3 class="ml-product-name">
+                    ${product.name}
+                </h3>
+
+                <p class="ml-product-description">
+                    ${product.description}
+                </p>
+
+
+                <div class="ml-product-footer">
+
+                    <span class="ml-product-price">
+                        ${
+                            typeof product.price === "number"
+                            ? "₹" + product.price
+                            : "₹" + product.price
+                        }
+                    </span>
+
+                    <button
+                        class="ml-view-button"
+                        type="button">
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+
+        /* =================================
+   OPEN EXACT PRODUCT
+================================= */
+
+card.addEventListener(
+    "click",
+    function (event) {
+
+        // Add to Cart par click = sirf cart action
+        if (
+            event.target.closest(".ml-add-button")
+        ) {
+            return;
+        }
+
+        // Exact clicked product save karo
+        localStorage.setItem(
+            "selectedProduct",
+            JSON.stringify(product)
+        );
+
+        // Product detail page open karo
+        window.location.href =
+            "product.html";
+    }
+);
+
+        /* =================================
+           ADD TO CART
+        ================================= */
+
+        const addButton =
+            card.querySelector(
+                ".ml-add-button"
+            );
+
+
+        addButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+
+                let cart = [];
+
+
+                try {
+
+                    cart =
+                        JSON.parse(
+                            localStorage.getItem(
+                                "maggieCart"
+                            )
+                        ) || [];
+
+                } catch (error) {
+
+                    cart = [];
+
+                }
+
+
+                const existing =
+                    cart.find(
+                        item =>
+                            String(item.id) ===
+                            String(product.id)
+                    );
+
+
+                if (existing) {
+
+                    existing.qty =
+                        (existing.qty || existing.quantity || 1) + 1;
+                    delete existing.quantity;
+
+                } else {
+
+                    cart.push({
+
+                        ...product,
+
+                        qty: 1
+
+                    });
+
+                }
+
+
+                localStorage.setItem(
+                    "maggieCart",
+                    JSON.stringify(cart)
+                );
+
+
+                addButton.textContent =
+                    "✓";
+
+
+                setTimeout(
+                    function () {
+
+                        addButton.textContent =
+                            "+";
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+
+        return card;
+    }
+
+
+    /* =================================
+       CREATE CATEGORY SECTION
+    ================================= */
+
+    function renderHomeSections() {
+      container.innerHTML = '';
+      categories.forEach(
+        function (category) {
+
+            const categoryProducts =
+                products.filter(
+                    function (product) {
+
+                        return (
+                            String(
+                                product.category
+                            ).trim()
+                            ===
+                            category.name
+                        );
+
+                    }
+                );
+
+
+            /* Don't show empty category */
+
+            if (
+                categoryProducts.length === 0
+            ) {
+                return;
+            }
+
+
+            const section =
+                document.createElement(
+                    "section"
+                );
+
+
+            section.className =
+                "ml-product-section";
+
+
+            section.innerHTML = `
+
+                <div class="ml-section-header">
+
+                    <div>
+
+                        <span class="ml-section-kicker">
+                            MAGGIE LOVER
+                        </span>
+
+                        <h2>
+                            ${category.name}
+                        </h2>
+
+                        <p>
+                            ${category.subtitle}
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="ml-see-all"
+                        type="button">
+                        See All
+                    </button>
+
+                </div>
+
+
+                <div class="ml-product-slider">
+                </div>
+
+            `;
+
+
+            const slider =
+                section.querySelector(
+                    ".ml-product-slider"
+                );
+
+
+            categoryProducts.forEach(
+                function (product) {
+
+                    slider.appendChild(
+                        createProductCard(
+                            product
+                        )
+                    );
+
+                }
+            );
+
+
+            /* =================================
+               SEE ALL → CATEGORY PAGE
+            ================================= */
+
+            const seeAll =
+                section.querySelector(
+                    ".ml-see-all"
+                );
+
+
+            seeAll.addEventListener(
+                "click",
+                function () {
+
+                    localStorage.setItem(
+                        "selectedCategory",
+                        category.name
+                    );
+
+
+                    window.location.href =
+                        "categories.html";
+
+                }
+            );
+
+
+            container.appendChild(
+                section
+            );
+
+        }
+    );
+
+
+    }
+    renderHomeSections();
+    document.addEventListener('maggie:catalog-updated', function(event) {
+      const detail = event.detail || {};
+      if (Array.isArray(detail.products) && detail.products.length) {
+        products.splice(0, products.length, ...detail.products.map(p => ({...p, image: p.image || ''})));
+      }
+      if (Array.isArray(detail.categories) && detail.categories.length) {
+        const trending = categories.find(c => c.name === 'Trending now');
+        categories.splice(0, categories.length, ...(trending ? [trending] : []), ...detail.categories.filter(name => name !== 'Trending now').map(name => ({name, subtitle: 'Freshly updated menu'})));
+      }
+      renderHomeSections();
+    });
+    console.log("Maggie Lover: live catalog sync enabled.");
+
+});
+</script>
+
+    <!-- BOTTOM NAV --> 
+
+<nav class="bottom-nav">
+
+<a
+  class="nav-item active"
+  href="index.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 10.5L12 3l9 7.5"/>
+  <path d="M5 9.5V21h14V9.5"/>
+  <path d="M9 21v-6h6v6"/>
+</svg>
+<small>Home</small>
+</a>
+
+<a
+  class="nav-item"
+  href="categories.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="6" height="6" rx="1"/>
+  <rect x="14" y="4" width="6" height="6" rx="1"/>
+  <rect x="4" y="14" width="6" height="6" rx="1"/>
+  <rect x="14" y="14" width="6" height="6" rx="1"/>
+ </svg>
+<small>Categories</small>
+</a>
+
+<a
+  class="nav-item"
+  href="cart.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.2"/>
+  <circle cx="18" cy="20" r="1.2"/>
+</svg>
+<small>Cart</small>
+</a>
+
+<a
+  class="nav-item"
+  href="orders.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 7h14v14H5z"/>
+  <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+ </svg>
+<small>Orders</small>
+</a>
+
+<a
+  class="nav-item"
+  href="account.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/>
+</svg>
+<small>Account</small>
+</a>
+
+</nav>
+
+  <!-- ================= JAVASCRIPT FILES ================= -->
+
+  
+  <!-- products are defined inline on this page -->
+<script src="api.js"></script>
+<script src="app.js"></script>
+
+  <!-- ================= SINGLE SPLASH + ACCOUNT SYSTEM ================= -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const splashScreen = document.getElementById("splashScreen");
+    const loginScreen = document.getElementById("loginScreen");
+    const homePage = document.getElementById("homePage");
+    const loginForm = document.getElementById("loginForm");
+    const loginError = document.getElementById("loginError");
+    const profileInitial = document.getElementById("profileInitial");
+    const phoneInput = document.getElementById("loginPhone");
+
+    function getSavedUser() {
+      const saved = localStorage.getItem("maggieLoverUser");
+      if (!saved) return null;
+
+      try {
+        return JSON.parse(saved);
+      } catch (error) {
+        console.error("Invalid saved user data", error);
+        localStorage.removeItem("maggieLoverUser");
+        return null;
+      }
+    }
+
+    function showError(message) {
+      if (!loginError) return;
+      loginError.textContent = message;
+      loginError.style.display = "block";
+    }
+
+    function hideError() {
+      if (!loginError) return;
+      loginError.textContent = "";
+      loginError.style.display = "none";
+    }
+
+    function showLogin() {
+      if (loginScreen) {
+        loginScreen.classList.remove("hidden");
+        loginScreen.style.display = "flex";
+      }
+
+      if (homePage) {
+        homePage.classList.add("hidden");
+        homePage.style.display = "none";
+      }
+    }
+
+    function loadUserData() {
+      const user = getSavedUser();
+      if (!user) return;
+
+      if (profileInitial && user.name) {
+        profileInitial.textContent =
+          user.name.charAt(0).toUpperCase();
+      }
+    }
+
+    function showHome() {
+      if (loginScreen) {
+        loginScreen.classList.add("hidden");
+        loginScreen.style.display = "none";
+      }
+
+      if (homePage) {
+        homePage.classList.remove("hidden");
+        homePage.style.display = "";
+      }
+
+      loadUserData();
+    }
+
+    function hideSplash() {
+      if (!splashScreen) return;
+
+      splashScreen.classList.add("hide");
+
+      setTimeout(function () {
+        splashScreen.style.display = "none";
+      }, 400);
+    }
+
+    /* =========================================
+       ONE SINGLE SPLASH FLOW
+    ========================================= */
+    const splashAlreadyShown =
+      sessionStorage.getItem("maggieLoverSplashShown");
+
+    if (splashAlreadyShown !== "true") {
+      if (splashScreen) {
+        splashScreen.style.display = "flex";
+        splashScreen.classList.remove("hide");
+      }
+
+      /* Keep login/home hidden while splash is visible. */
+      if (loginScreen) {
+        loginScreen.classList.add("hidden");
+        loginScreen.style.display = "none";
+      }
+
+      if (homePage) {
+        homePage.classList.add("hidden");
+        homePage.style.display = "none";
+      }
+
+      sessionStorage.setItem(
+        "maggieLoverSplashShown",
+        "true"
+      );
+
+      setTimeout(function () {
+        hideSplash();
+
+        setTimeout(function () {
+          if (getSavedUser()) {
+            showHome();
+          } else {
+            showLogin();
+          }
+        }, 400);
+      }, 2500);
+
+    } else {
+      if (splashScreen) {
+        splashScreen.style.display = "none";
+        splashScreen.classList.add("hide");
+      }
+
+      if (getSavedUser()) {
+        showHome();
+      } else {
+        showLogin();
+      }
+    }
+
+    /* =========================================
+       CREATE ACCOUNT — ONE SINGLE SUBMIT HANDLER
+    ========================================= */
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        hideError();
+
+        const nameInput = document.getElementById("loginName");
+        const phoneInput = document.getElementById("loginPhone");
+        const emailInput = document.getElementById("loginEmail");
+
+        if (!nameInput || !phoneInput || !emailInput) {
+          showError("Login form fields are missing.");
+          return;
+        }
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+
+        if (name.length < 2) {
+          showError("Please enter your name.");
+          nameInput.focus();
+          return;
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+          showError("Please enter a valid 10 digit phone number.");
+          phoneInput.focus();
+          return;
+        }
+
+        const user = {
+          name: name,
+          phone: phone,
+          email: email,
+          loggedIn: true,
+          createdAt: new Date().toISOString()
+        };
+
+        /* Main account data */
+        localStorage.setItem(
+          "maggieLoverUser",
+          JSON.stringify(user)
+        );
+
+        /* Existing individual keys */
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userPhone", phone);
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("isLoggedIn", "true");
+
+        /* Keys used by account.html profile */
+        localStorage.setItem("profileName", name);
+        localStorage.setItem(
+          "profilePhone",
+          "+91 " + phone.slice(0, 5) + " " + phone.slice(5)
+        );
+
+        showHome();
+        loginForm.reset();
+      });
+    }
+
+    /* Phone field: numbers only, maximum 10 digits. */
+    if (phoneInput) {
+      phoneInput.addEventListener("input", function () {
+        this.value = this.value
+          .replace(/\D/g, "")
+          .slice(0, 10);
+      });
+    }
+
+    /* =========================================
+       LOGOUT
+       Supports a logout button if one exists.
+    ========================================= */
+    const logoutButton = document.getElementById("logoutButton");
+
+    if (logoutButton) {
+      logoutButton.addEventListener("click", function () {
+        localStorage.removeItem("maggieLoverUser");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userPhone");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("profileName");
+        localStorage.removeItem("profilePhone");
+
+        sessionStorage.removeItem("maggieLoverSplashShown");
+        showLogin();
+      });
+    }
+
+  });
+  </script>
+
+
+    <script>
+(function () {
+
+    const slides =
+        document.querySelectorAll(".hero-slide");
+
+    const dots =
+        document.querySelectorAll(".hero-dot");
+
+    if (!slides.length) return;
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle(
+                "active",
+                i === index
+            );
+        });
+
+        currentSlide = index;
+    }
+
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener(
+            "click",
+            () => showSlide(index)
+        );
+
+    });
+
+
+    setInterval(() => {
+
+        currentSlide =
+            (currentSlide + 1) % slides.length;
+
+        showSlide(currentSlide);
+
+    }, 4000);
+
+})();
+</script>
+
+       <script>
+const products = [
+
+    {
+        id: 1,
+        name: "Veg Handi Maggi",
+        category: "Trending now",
+        price: 119,
+        rating: 4.9,
+        image: "assets/products/veg-handi-maggi.webp",
+        description: "Fresh vegetables cooked with signature handi masala in a traditional clay pot.",
+        tags: ["Best Seller", "Veg", "Handi"]
+    },
+
+    {
+        id: 2,
+        name: "Triple Cheese Handi Maggi",
+        category: "Trending now",
+        price: 119,
+        rating: 4.9,
+        image: "assets/products/triple-cheese-handi-maggi.webp",
+        description: "Premium Handi Maggi loaded with three layers of rich melted cheese.",
+        tags: ["Triple Cheese", "Premium", "Best Seller"]
+    },
+
+    {
+        id: 3,
+        name: "Mozzarella Cheese Maggi",
+        category: "Trending now",
+        price: 109,
+        rating: 4.8,
+        image: "assets/products/mozzarella-cheese-maggi.webp",
+        description: "Hot Maggi topped with generous melted mozzarella cheese.",
+        tags: ["Mozzarella", "Cheese", "Popular"]
+    },
+
+    {
+        id: 4,
+        name: "Dry Paneer",
+        category: "Trending now",
+        price: 109,
+        rating: 4.8,
+        image: "assets/products/dry-paneer.webp",
+        description: "Dry Maggi loaded with melted cheese for a rich and delicious taste.",
+        tags: ["Cheese", "Dry", "Best Seller"]
+    },
+
+    {
+        id: 5,
+        name: "Loaded Cheese Pasta",
+        category: "Trending now",
+        price: 199,
+        rating: 4.9,
+        image: "assets/products/loaded-cheese-pasta.webp",
+        description: "Extra-loaded creamy pasta with plenty of melted cheese.",
+        tags: ["Loaded", "Cheese", "Premium"]
+    },
+
+    {
+        id: 6,
+        name: "Handi Paneer Maggi",
+        category: "Trending now",
+        price: 160,
+        rating: 4.8,
+        image: "assets/products/handi-paneer-maggi.webp",
+        description: "Signature handi Maggi loaded with soft paneer and flavorful spices.",
+        tags: ["Paneer", "Handi", "Maggi"]
+    },
+
+    {
+        id: 7,
+        name: "Cheese Gravy Momo",
+        category: "Trending now",
+        price: 199,
+        rating: 4.9,
+        image: "assets/products/cheese-gravy-momo.webp",
+        description: "Soft momos covered in rich creamy cheese gravy.",
+        tags: ["Cheese", "Gravy", "Premium"]
+    },
+
+    {
+        id: 8,
+        name: "Triple Cheese Maggi Pizza",
+        category: "Trending now",
+        price: 329,
+        rating: 4.9,
+        image: "assets/products/triple-cheese-maggi-pizza.webp",
+        description: "Extra-loaded Maggi pizza covered with three delicious layers of cheese.",
+        tags: ["Triple Cheese", "Maggi", "Premium"]
+    },
+
+    {
+        id: 9,
+        name: "Paneer Cheese Handi Maggi",
+        category: "Trending now",
+        price: 199,
+        rating: 4.8,
+        image: "assets/products/paneer-cheese-handi-maggi.webp",
+        description: "Soft paneer and melted cheese combined with signature Handi Maggi.",
+        tags: ["Paneer", "Cheese", "Premium"]
+    },
+
+    {
+        id: 10,
+        name: "Volcano Cheese Momo",
+        category: "Trending now",
+        price: 219,
+        rating: 4.9,
+        image: "assets/products/volcano-cheese-momo.webp",
+        description: "Premium momos loaded with molten cheese for an indulgent experience.",
+        tags: ["Volcano", "Cheese", "Premium"]
+    },
+
+    {
+    id: 1,
+    category: "World Famous Handi Maggi",
+    name: "Veg Handi Maggi",
+    price: 119,
+    image: "assets/products/veg-handi-maggi.webp",
+    description: "Fresh vegetables cooked with signature handi masala in a traditional clay pot.",
+    tags: ["Best Seller", "Spicy 🌶️", "Handi 🍲"]
+  },
+
+  {
+    id: 2,
+    category: "World Famous Handi Maggi",
+    name: "Peri Peri Handi Maggi",
+    price: 119,
+    image: "assets/products/peri-peri-handi-maggi.webp",
+    description: "Loaded with fiery peri peri seasoning and smoky handi flavour.",
+    tags: ["Hot 🔥", "Peri Peri 🌶️"]
+  },
+
+  {
+    id: 3,
+    category: "World Famous Handi Maggi",
+    name: "Tandoori Handi Maggi",
+    price: 119,
+    image: "assets/products/tandoori-handi-maggi.webp",
+    description: "Rich tandoori spices mixed with buttery handi Maggi.",
+    tags: ["Tandoori 🔥", "Smoky 🌫️"]
+  },
+
+  {
+    id: 4,
+    category: "World Famous Handi Maggi",
+    name: "Masala Handi Maggi",
+    price: 119,
+    image: "assets/products/masala-handi-maggi.webp",
+    description: "Classic spicy handi Maggi with rich Indian masala and fresh herbs.",
+    tags: ["Classic ⭐", "Spicy 🌶️"]
+  },
+
+  {
+    id: 5,
+    category: "World Famous Handi Maggi",
+    name: "Biryani Handi Maggi",
+    price: 139,
+    image: "assets/products/biryani-handi-maggi.webp",
+    description: "Biryani-style aromatic spices blended with steaming handi Maggi.",
+    tags: ["Biryani 🍛", "Aromatic ✨"]
+  },
+
+  {
+    id: 6,
+    category: "World Famous Handi Maggi",
+    name: "Butter Handi Maggi",
+    price: 139,
+    image: "assets/products/butter-handi-maggi.webp",
+    description: "Extra buttery and creamy handi Maggi for a rich mouthfeel.",
+    tags: ["Buttery 🧈", "Creamy ✨"]
+  },
+
+  {
+    id: 7,
+    category: "World Famous Handi Maggi",
+    name: "Schezwan Handi Maggi",
+    price: 139,
+    image: "assets/products/schezwan-handi-maggi.webp",
+    description: "Indo-Chinese Schezwan sauce tossed with hot handi Maggi.",
+    tags: ["Schezwan 🌶️", "Chinese 🥢"]
+  },
+
+  {
+    id: 8,
+    category: "World Famous Handi Maggi",
+    name: "Paneer Handi Maggi",
+    price: 159,
+    image: "assets/products/paneer-handi-maggi.webp",
+    description: "Soft paneer cubes mixed with spicy handi Maggi and herbs.",
+    tags: ["Paneer 🧈", "Protein 💪"]
+  },
+
+  {
+    id: 9,
+    category: "World Famous Handi Maggi",
+    name: "Manchurian Handi Maggi",
+    price: 159,
+    image: "assets/products/manchurian-handi-maggi.webp",
+    description: "Juicy Manchurian balls served with spicy Schezwan-style handi Maggi.",
+    tags: ["Manchurian 🍘", "Loaded 🔥"]
+  },
+
+  {
+    id: 10,
+    category: "World Famous Handi Maggi",
+    name: "Corn Cheese Handi Maggi",
+    price: 190,
+    image: "assets/products/corn-cheese-handi-maggi.webp",
+    description: "Sweet corn, cheese sauce and melted mozzarella in a clay pot.",
+    tags: ["Corn 🌽", "Cheesy 🧀"]
+  },
+
+  {
+    id: 11,
+    category: "World Famous Handi Maggi",
+    name: "Double Cheese Handi Maggi",
+    price: 199,
+    image: "assets/products/double-cheese-handi-maggi.webp",
+    description: "Double layer cheese and creamy sauce for the ultimate cheese pull.",
+    tags: ["Double Cheese 🧀🧀", "Premium ✨"]
+  },
+
+  {
+    id: 12,
+    category: "World Famous Handi Maggi",
+    name: "Creamy White Sauce Handi Maggi",
+    price: 199,
+    image: "assets/products/creamy-white-sauce-handi-maggi.webp",
+    description: "Rich white sauce, butter and herbs mixed with creamy handi Maggi.",
+    tags: ["White Sauce 🤍", "Creamy ✨"]
+  }
+
+];
+
+products.push(
+
+{
+  id: 13,
+  category: "Premium Handi Maggi",
+  name: "Paneer Cheese Handi Maggi",
+  price: 199,
+  image: "assets/products/paneer-cheese-handi-maggi.webp",
+  description: "Soft paneer cubes and melted cheese served in rich handi masala.",
+  tags: ["Paneer 🧈", "Cheesy 🧀", "Premium ✨"]
+},
+
+{
+  id: 14,
+  category: "Premium Handi Maggi",
+  name: "Corn Paneer Handi Maggi",
+  price: 189,
+  image: "assets/products/corn-paneer-handi-maggi.webp",
+  description: "Sweet corn and paneer mixed with creamy handi Maggi.",
+  tags: ["Corn 🌽", "Paneer 🧈"]
+},
+
+{
+  id: 15,
+  category: "Premium Handi Maggi",
+  name: "Triple Cheese Handi Maggi",
+  price: 249,
+  image: "assets/products/triple-cheese-handi-maggi.webp",
+  description: "Three layers of cheese for the ultimate cheese pull experience.",
+  tags: ["Triple Cheese 🧀🧀🧀", "Premium ✨"]
+},
+
+{
+  id: 16,
+  category: "Premium Handi Maggi",
+  name: "Paneer Corn Double Cheese Handi Maggi",
+  price: 269,
+  image: "assets/products/paneer-corn-double-cheese-handi-maggi.webp",
+  description: "Loaded with paneer, corn and double cheese in a clay pot.",
+  tags: ["Loaded 🔥", "Double Cheese 🧀🧀"]
+});
+
+products.push(
+
+{
+  id: 17,
+  category: "Maggi Bowl",
+  name: "Vegetable Maggi",
+  price: 59,
+  image: "assets/products/vegetable-maggi.webp",
+  description: "Light and tasty vegetable Maggi bowl.",
+  tags: ["Veg 🥦"]
+},
+
+{
+  id: 18,
+  category: "Maggi Bowl",
+  name: "Peri Peri Maggi",
+  price: 59,
+  image: "assets/products/peri-peri-maggi.webp",
+  description: "Fiery peri peri flavour in every bite.",
+  tags: ["Spicy 🌶️"]
+},
+
+{
+  id: 19,
+  category: "Maggi Bowl",
+  name: "Spicy Maggi",
+  price: 59,
+  image: "assets/products/spicy-maggi.webp",
+  description: "Classic spicy street-style Maggi bowl.",
+  tags: ["Hot 🔥"]
+},
+
+{
+  id: 20,
+  category: "Maggi Bowl",
+  name: "Punjabi Tarka Maggi",
+  price: 69,
+  image: "assets/products/punjabi-tarka-maggi.webp",
+  description: "Punjabi-style tadka and butter flavour.",
+  tags: ["Punjabi 🍛"]
+},
+
+{
+  id: 21,
+  category: "Maggi Bowl",
+  name: "Masala Maggi",
+  price: 69,
+  image: "assets/products/masala-maggi.webp",
+  description: "Rich masala flavour loved by everyone.",
+  tags: ["Best Seller ⭐"]
+},
+
+{
+  id: 22,
+  category: "Maggi Bowl",
+  name: "Maggi Bhel",
+  price: 69,
+  image: "assets/products/maggi-bhel.webp",
+  description: "Crunchy bhel-style Maggi snack bowl.",
+  tags: ["Crunchy 🥙"]
+},
+
+{
+  id: 23,
+  category: "Maggi Bowl",
+  name: "Biryani Flavour Maggi",
+  price: 79,
+  image: "assets/products/biryani-flavour-maggi.webp",
+  description: "Aromatic biryani masala blended with Maggi.",
+  tags: ["Biryani 🍛"]
+},
+
+{
+  id: 24,
+  category: "Maggi Bowl",
+  name: "Butter Maggi",
+  price: 79,
+  image: "assets/products/butter-maggi.webp",
+  description: "Smooth buttery flavour with creamy texture.",
+  tags: ["Butter 🧈"]
+},
+
+{
+  id: 25,
+  category: "Maggi Bowl",
+  name: "Schezwan Maggi",
+  price: 79,
+  image: "assets/products/schezwan-maggi.webp",
+  description: "Spicy Schezwan sauce tossed with noodles.",
+  tags: ["Chinese 🥢"]
+},
+
+{
+  id: 26,
+  category: "Maggi Bowl",
+  name: "Corn Maggi",
+  price: 79,
+  image: "assets/products/corn-maggi.webp",
+  description: "Sweet corn mixed with creamy Maggi.",
+  tags: ["Corn 🌽"]
+},
+
+{
+  id: 27,
+  category: "Maggi Bowl",
+  name: "Creamy White Sauce Maggi",
+  price: 89,
+  image: "assets/products/creamy-white-sauce-maggi.webp",
+  description: "Rich white sauce and herbs for a creamy bowl.",
+  tags: ["White Sauce 🤍"]
+},
+
+{
+  id: 28,
+  category: "Maggi Bowl",
+  name: "Mozzarella Cheese Maggi",
+  price: 109,
+  image: "assets/products/mozzarella-cheese-maggi.webp",
+  description: "Stretchy mozzarella cheese melted over hot Maggi.",
+  tags: ["Cheesy 🧀"]
+},
+
+{
+  id: 29,
+  category: "Dry Lover Maggi", 
+  name: "Classic Maggi",
+  price: 69,
+  image: "assets/products/classic-maggi.webp",
+  description: "Simple, dry and perfectly seasoned Maggi.",
+  tags: ["Classic ⭐"]
+},
+
+{
+  id: 30,
+  category: "Dry Lover Maggi",
+  name: "Chinese Maggi",
+  price: 69,
+  image: "assets/products/chinese-maggi.webp",
+  description: "Indo-Chinese dry Maggi with spicy seasoning.",
+  tags: ["Chinese 🥢"]
+},
+
+{
+  id: 31,
+  category: "Classic Pasta",
+  name: "Pasta",
+  price: 50,
+  image: "assets/products/pasta.webp",
+  description: "Simple and tasty classic pasta.",
+  tags: ["Classic ⭐"]
+},
+
+{
+  id: 32,
+  category: "Classic Pasta",
+  name: "Red Sauce Pasta",
+  price: 50,
+  image: "assets/products/red-sauce-pasta.webp",
+  description: "Tangy tomato red sauce pasta.",
+  tags: ["Red Sauce 🍅"]
+},
+
+{
+  id: 33,
+  category: "Classic Pasta",
+  name: "Chinese Pasta",
+  price: 60,
+  image: "assets/products/chinese-pasta.webp",
+  description: "Indo-Chinese style spicy pasta.",
+  tags: ["Chinese 🥢"]
+},
+
+{
+  id: 34,
+  category: "Classic Pasta",
+  name: "Cheese Pasta",
+  price: 100,
+  image: "assets/products/cheese-pasta.webp",
+  description: "Creamy cheese loaded pasta.",
+  tags: ["Cheesy 🧀"]
+},
+
+{
+  id: 35,
+  category: "Classic Pasta",
+  name: "Peri Peri Pasta",
+  price: 70,
+  image: "assets/products/peri-peri-pasta.webp",
+  description: "Fiery peri peri pasta with herbs.",
+  tags: ["Spicy 🌶️"]
+},
+
+{
+  id: 36,
+  category: "Classic Pasta",
+  name: "Tandoori Pasta",
+  price: 70,
+  image: "assets/products/tandoori-pasta.webp",
+  description: "Smoky tandoori flavoured pasta.",
+  tags: ["Tandoori 🔥"]
+},
+
+{
+  id: 37,
+  category: "Classic Pasta",
+  name: "Afghani Pasta",
+  price: 100,
+  image: "assets/products/afghani-pasta.webp",
+  description: "Rich creamy Afghani style pasta.",
+  tags: ["Creamy ✨"]
+},
+
+{
+  id: 38,
+  category: "Classic Pasta",
+  name: "Dragon Pasta",
+  price: 100,
+  image: "assets/products/dragon-pasta.webp",
+  description: "Extra spicy dragon sauce pasta.",
+  tags: ["Hot 🔥"]
+},
+
+{
+  id: 39,
+  category: "Classic Pasta",
+  name: "White Sauce Pasta",
+  price: 100,
+  image: "assets/products/white-sauce-pasta.webp",
+  description: "Rich white sauce and herb pasta.",
+  tags: ["White Sauce 🤍"]
+},
+
+{
+  id: 40,
+  category: "Classic Pasta",
+  name: "Maggi Mix Pasta",
+  price: 110,
+  image: "assets/products/maggi-mix-pasta.webp",
+  description: "Unique combination of Maggi and pasta.",
+  tags: ["Fusion 🍜🍝"]
+},
+
+{
+  id: 41,
+  category: "Classic Pasta",
+  name: "Manchurian Pasta",
+  price: 90,
+  image: "assets/products/manchurian-pasta.webp",
+  description: "Manchurian tossed spicy pasta.",
+  tags: ["Manchurian 🍘"]
+},
+
+{
+  id: 42,
+  category: "Classic Pasta",
+  name: "Paneer Pasta",
+  price: 90,
+  image: "assets/products/paneer-pasta.webp",
+  description: "Paneer cubes mixed with creamy pasta.",
+  tags: ["Paneer 🧈"]
+},
+
+{
+  id: 43,
+  category: "Classic Pasta",
+  name: "Handi Pasta",
+  price: 100,
+  image: "assets/products/handi-pasta.webp",
+  description: "Traditional handi-style creamy pasta.",
+  tags: ["Handi 🍲"]
+});
+
+products.push(
+
+{
+  id: 44,
+  category: "Premium Pasta",
+  name: "Volcano Cheese Pasta",
+  price: 160,
+  image: "assets/products/volcano-cheese-pasta.webp",
+  description: "Cheese volcano pasta with extra melted mozzarella.",
+  tags: ["Volcano 🌋", "Cheesy 🧀"]
+},
+
+{
+  id: 45,
+  category: "Premium Pasta",
+  name: "Tandoori Cream Pasta",
+  price: 160,
+  image: "assets/products/tandoori-cream-pasta.webp",
+  description: "Smoky tandoori spices blended with creamy sauce.",
+  tags: ["Tandoori 🔥", "Creamy ✨"]
+},
+
+{
+  id: 46,
+  category: "Premium Pasta",
+  name: "Schezwan Blast Pasta",
+  price: 160,
+  image: "assets/products/schezwan-blast-pasta.webp",
+  description: "Explosive Schezwan flavour for spice lovers.",
+  tags: ["Schezwan 🌶️", "Blast 💥"]
+},
+
+{
+  id: 47,
+  category: "Premium Pasta",
+  name: "Pink Sauce Pasta",
+  price: 160,
+  image: "assets/products/pink-sauce-pasta.webp",
+  description: "Perfect blend of red and white sauce.",
+  tags: ["Pink Sauce 🌸"]
+},
+
+{
+  id: 48,
+  category: "Premium Pasta",
+  name: "Corn Paneer Cheese Pasta",
+  price: 190,
+  image: "assets/products/corn-paneer-cheese-pasta.webp",
+  description: "Loaded with corn, paneer and cheese.",
+  tags: ["Loaded 🔥", "Paneer 🧈"]
+},
+
+{
+  id: 49,
+  category: "Premium Pasta",
+  name: "Loaded Cheese Pasta",
+  price: 199,
+  image: "assets/products/loaded-cheese-pasta.webp",
+  description: "Extra cheese and creamy sauce in every bite.",
+  tags: ["Cheesy 🧀", "Premium ✨"]
+});
+
+products.push(
+
+{
+  id: 50,
+  category: "Paneer Lover",
+  name: "Dry Paneer",
+  price: 80,
+  image: "assets/products/dry-paneer.webp",
+  description: "Crispy spicy dry paneer tossed with herbs.",
+  tags: ["Paneer 🧈", "Spicy 🌶️"]
+},
+
+{
+  id: 51,
+  category: "Paneer Lover",
+  name: "Gravy Paneer",
+  price: 160,
+  image: "assets/products/gravy-paneer.webp",
+  description: "Rich creamy paneer gravy with Indian spices.",
+  tags: ["Gravy 🍛", "Creamy ✨"]
+},
+
+{
+  id: 52,
+  category: "Paneer Lover",
+  name: "Kurkure Paneer Pakoda",
+  price: 160,
+  image: "assets/products/kurkure-paneer-pakoda.webp",
+  description: "Extra crunchy paneer pakoda with spicy coating.",
+  tags: ["Crunchy 🔥"]
+},
+
+{
+  id: 53,
+  category: "Paneer Lover",
+  name: "Paneer Maggi",
+  price: 100,
+  image: "assets/products/paneer-maggi.webp",
+  description: "Paneer cubes mixed with masala Maggi.",
+  tags: ["Fusion 🍜"]
+},
+
+{
+  id: 54,
+  category: "Paneer Lover",
+  name: "Handi Paneer",
+  price: 110,
+  image: "assets/products/handi-paneer.webp",
+  description: "Traditional handi paneer cooked in clay pot style.",
+  tags: ["Handi 🍲"]
+},
+
+{
+  id: 55,
+  category: "Paneer Lover",
+  name: "Handi Paneer Maggi",
+  price: 160,
+  image: "assets/products/handi-paneer-maggi.webp",
+  description: "Loaded handi paneer with spicy Maggi.",
+  tags: ["Loaded 🔥"]
+},
+
+{
+  id: 56,
+  category: "Paneer Lover",
+  name: "Butter Paneer",
+  price: 100,
+  image: "assets/products/butter-paneer.webp",
+  description: "Creamy buttery paneer with rich flavour.",
+  tags: ["Butter 🧈"]
+},
+
+{
+  id: 57,
+  category: "Paneer Lover",
+  name: "Biryani Flavour Paneer",
+  price: 100,
+  image: "assets/products/biryani-flavour-paneer.webp",
+  description: "Aromatic biryani masala paneer.",
+  tags: ["Biryani 🍛"]
+},
+
+{
+  id: 58,
+  category: "Paneer Lover",
+  name: "Handi Biryani Paneer",
+  price: 125,
+  image: "assets/products/handi-biryani-paneer.webp",
+  description: "Handi style paneer with biryani spices.",
+  tags: ["Handi 🍲", "Biryani 🍛"]
+});
+
+products.push(
+
+{
+  id: 59,
+  category: "Manchurian Lover",
+  name: "Dry Manchurian",
+  price: 80,
+  image: "assets/products/dry-manchurian.webp",
+  description: "Crispy dry Manchurian with spicy sauce.",
+  tags: ["Chinese 🥢"]
+},
+
+{
+  id: 60,
+  category: "Manchurian Lover",
+  name: "Gravy Manchurian",
+  price: 160,
+  image: "assets/products/gravy-manchurian.webp",
+  description: "Juicy Manchurian balls in rich gravy.",
+  tags: ["Gravy 🍛"]
+},
+
+{
+  id: 61,
+  category: "Manchurian Lover",
+  name: "Manchurian Maggi",
+  price: 100,
+  image: "assets/products/manchurian-maggi.webp",
+  description: "Manchurian mixed with spicy Maggi noodles.",
+  tags: ["Fusion 🍜"]
+},
+
+{
+  id: 62,
+  category: "Manchurian Lover",
+  name: "Handi Manchurian",
+  price: 110,
+  image: "assets/products/handi-manchurian.webp",
+  description: "Clay pot style spicy Manchurian.",
+  tags: ["Handi 🍲"]
+},
+
+{
+  id: 63,
+  category: "Manchurian Lover",
+  name: "Handi Manchurian Maggi",
+  price: 160,
+  image: "assets/products/handi-manchurian-maggi.webp",
+  description: "Loaded handi Manchurian with Maggi.",
+  tags: ["Loaded 🔥"]
+},
+
+{
+  id: 64,
+  category: "Manchurian Lover",
+  name: "Butter Manchurian",
+  price: 100,
+  image: "assets/products/butter-manchurian.webp",
+  description: "Buttery creamy Manchurian flavour.",
+  tags: ["Butter 🧈"]
+},
+
+{
+  id: 65,
+  category: "Manchurian Lover",
+  name: "Biryani Flavour Manchurian",
+  price: 100,
+  image: "assets/products/biryani-flavour-manchurian.webp",
+  description: "Biryani spice infused Manchurian.",
+  tags: ["Biryani 🍛"]
+},
+
+{
+  id: 66,
+  category: "Manchurian Lover",
+  name: "Handi Biryani Manchurian",
+  price: 125,
+  image: "assets/products/handi-biryani-manchurian.webp",
+  description: "Handi cooked Manchurian with biryani masala.",
+  tags: ["Handi 🍲", "Biryani 🍛"]
+});
+
+products.push(
+
+{
+  id: 67,
+  category: "Aata Momos",
+  name: "Mix Momo",
+  price: 79,
+  image: "assets/products/mix-momo.webp",
+  description: "Assorted wheat momos with spicy chutney.",
+  tags: ["Momo 🥟"]
+},
+
+{
+  id: 68,
+  category: "Aata Momos",
+  name: "Paneer Momo",
+  price: 89,
+  image: "assets/products/paneer-momo.webp",
+  description: "Soft paneer stuffed wheat momos.",
+  tags: ["Paneer 🧈"]
+},
+
+{
+  id: 69,
+  category: "Aata Momos",
+  name: "Veg Momo",
+  price: 79,
+  image: "assets/products/veg-momo.webp",
+  description: "Fresh vegetable filled healthy momos.",
+  tags: ["Veg 🥦"]
+},
+
+{
+  id: 70,
+  category: "Aata Momos",
+  name: "Soya Momo",
+  price: 79,
+  image: "assets/products/soya-momo.webp",
+  description: "Protein rich soya stuffed momos.",
+  tags: ["Protein 💪"]
+},
+
+{
+  id: 71,
+  category: "Aata Momos",
+  name: "Fry Momo",
+  price: 89,
+  image: "assets/products/fry-momo.webp",
+  description: "Crispy fried momos with spicy seasoning.",
+  tags: ["Crispy 🍟"]
+},
+
+{
+  id: 72,
+  category: "Aata Momos",
+  name: "Gravy Momo",
+  price: 139,
+  image: "assets/products/gravy-momo.webp",
+  description: "Momos served in spicy gravy sauce.",
+  tags: ["Gravy 🍛"]
+},
+
+{
+  id: 73,
+  category: "Aata Momos",
+  name: "Maggi Mix Momo",
+  price: 130,
+  image: "assets/products/maggi-mix-momo.webp",
+  description: "Momos tossed with spicy Maggi masala.",
+  tags: ["Fusion 🍜"]
+},
+
+{
+  id: 74,
+  category: "Aata Momos",
+  name: "Handi Momo",
+  price: 139,
+  image: "assets/products/handi-momo.webp",
+  description: "Traditional handi style momos.",
+  tags: ["Handi 🍲"]
+},
+
+{
+  id: 75,
+  category: "Aata Momos",
+  name: "Kurkure Momo",
+  price: 139,
+  image: "assets/products/kurkure-momo.webp",
+  description: "Extra crunchy kurkure coated momos.",
+  tags: ["Crunchy 🔥"]
+},
+
+ {
+  id: 76,
+  category: "Aata Momos",
+  name: "Tandoori Gravy Momo",
+  price: 139,
+  image: "assets/products/tandoori-gravy-momo.webp",
+  description: "Smoky tandoori momos in rich gravy.",
+  tags: ["Tandoori 🔥"]
+},
+
+{
+  id: 77,
+  category: "Aata Momos",
+  name: "Afghani Momo",
+  price: 160,
+  image: "assets/products/afghani-momo.webp",
+  description: "Creamy Afghani style loaded momos.",
+  tags: ["Creamy ✨"]
+},
+
+{
+  id: 78,
+  category: "Aata Momos",
+  name: "Peri Peri Gravy Momo",
+  price: 139,
+  image: "assets/products/peri-peri-gravy-momo.webp",
+  description: "Peri peri spicy gravy momos.",
+  tags: ["Spicy 🌶️"]
+},
+
+{
+  id: 79,
+  category: "Aata Momos",
+  name: "Schezwan Gravy Momo",
+  price: 139,
+  image: "assets/products/schezwan-gravy-momo.webp",
+  description: "Schezwan loaded gravy momos.",
+  tags: ["Chinese 🥢"]
+},
+
+{
+  id: 80,
+  category: "Aata Momos",
+  name: "Cheese Gravy Momo",
+  price: 199,
+  image: "assets/products/cheese-gravy-momo.webp",
+  description: "Cheese loaded gravy momos with creamy sauce.",
+  tags: ["Cheesy 🧀"]
+},
+
+{
+  id: 81,
+  category: "Aata Momos",
+  name: "Corn Cheese Momo",
+  price: 199,
+  image: "assets/products/corn-cheese-momo.webp",
+  description: "Sweet corn and cheese stuffed momos.",
+  tags: ["Corn 🌽", "Cheesy 🧀"]
+},
+
+{
+  id: 82,
+  category: "Aata Momos",
+  name: "Red Sauce Momo",
+  price: 139,
+  image: "assets/products/red-sauce-momo.webp",
+  description: "Tangy red sauce coated momos.",
+  tags: ["Red Sauce 🍅"]
+},
+
+{
+  id: 83,
+  category: "Aata Momos",
+  name: "Volcano Cheese Momo",
+  price: 219,
+  image: "assets/products/volcano-cheese-momo.webp",
+  description: "Volcano style overflowing cheese momos.",
+  tags: ["Volcano 🌋", "Cheesy 🧀"]
+},
+
+{
+  id: 84,
+  category: "Aata Momos",
+  name: "Dragon Momo",
+  price: 139,
+  image: "assets/products/dragon-momo.webp",
+  description: "Extra spicy dragon style momos.",
+  tags: ["Dragon 🔥"]
+});
+
+products.push(
+
+{ id:85, category:"Pizza", name:"Classic Pizza", price:99, image: "assets/products/classic-pizza.webp", description:"Classic cheesy pizza with rich tomato sauce.", tags:["Classic ⭐"] },
+
+{ id:86, category:"Pizza", name:"Corn Pizza", price:99, image: "assets/products/corn-pizza.webp", description:"Sweet corn and cheese loaded pizza.", tags:["Corn 🌽"] },
+
+{ id:87, category:"Pizza", name:"Onion Pizza", price:99, image: "assets/products/onion-pizza.webp", description:"Fresh onion topped cheesy pizza.", tags:["Fresh 🧅"] },
+
+{ id:88, category:"Pizza", name:"Paneer Pizza", price:129, image: "assets/products/paneer-pizza.webp", description:"Soft paneer cubes with mozzarella cheese.", tags:["Paneer 🧈"] },
+
+{ id:89, category:"Pizza", name:"Mix Veg Pizza", price:169, image: "assets/products/mix-veg-pizza.webp", description:"Loaded with fresh vegetables and cheese.", tags:["Veg 🥦"] },
+
+{ id:90, category:"Pizza", name:"Maggi Pizza", price:199, image: "assets/products/maggi-pizza.webp", description:"Fusion pizza topped with spicy Maggi.", tags:["Fusion 🍜🍕"] },
+
+{ id:91, category:"Pizza", name:"Schezwan Pizza", price:149, image: "assets/products/schezwan-pizza.webp", description:"Schezwan sauce and cheese explosion.", tags:["Chinese 🥢"] },
+
+{ id:92, category:"Pizza", name:"Peri Peri Pizza", price:149, image: "assets/products/peri-peri-pizza.webp", description:"Fiery peri peri cheese pizza.", tags:["Spicy 🌶️"] },
+
+{ id:93, category:"Pizza", name:"Corn Cheese Maggi Pizza", price:249, image: "assets/products/corn-cheese-maggi-pizza.webp", description:"Corn, cheese and Maggi loaded pizza.", tags:["Loaded 🔥"] },
+
+{ id:94, category:"Pizza", name:"Triple Cheese Maggi Pizza", price:329, image: "assets/products/triple-cheese-maggi-pizza.webp", description:"Triple cheese with spicy Maggi topping.", tags:["Triple Cheese 🧀🧀🧀"] },
+
+{ id:95, category:"Pizza", name:"Kurkure Crunch Pizza", price:149, image: "assets/products/kurkure-crunch-pizza.webp", description:"Extra crunchy Kurkure topping pizza.", tags:["Crunchy 🔥"] },
+
+{ id:96, category:"Pizza", name:"Tandoori Paneer Pizza", price:169, image: "assets/products/tandoori-paneer-pizza.webp", description:"Smoky tandoori paneer pizza.", tags:["Tandoori 🔥"] },
+
+{ id:97, category:"Pizza", name:"Afghani Cheese Pizza", price:179, image: "assets/products/afghani-cheese-pizza.webp", description:"Creamy Afghani cheese pizza.", tags:["Creamy ✨"] },
+
+{ id:98, category:"Pizza", name:"Corn & Jalapeno Pizza", price:199, image: "assets/products/corn-&-jalapeno-pizza.webp", description:"Corn and jalapeno cheese delight.", tags:["Jalapeno 🌶️"] },
+
+{ id:99, category:"Pizza", name:"Skull Pizza", price:149, image: "assets/products/skull-pizza.webp", description:"Signature spicy Skull pizza.", tags:["Signature ☠️"] },
+
+{ id:100, category:"Pizza", name:"Handi Pizza", price:169, image: "assets/products/handi-pizza.webp", description:"Unique handi style cheesy pizza.", tags:["Handi 🍲"] },
+
+{ id:101, category:"Pizza", name:"Kulhad Pizza", price:129, image: "assets/products/kulhad-pizza.webp", description:"Kulhad served fusion pizza delight.", tags:["Fusion 🍕"] },
+
+{ id:102,
+  category:"Pizza", 
+  name:"Triple Cheese Overload Pizza", 
+  price:269, 
+  image: "assets/products/triple-cheese-overload-pizza.webp", 
+  description:"Overloaded with three types of cheese.", 
+  tags:["Overload 🧀"] 
+}
+
+);
+
+
+
+
+</script>
+    
+
+
+
+
+  <script>
+(function () {
+
+    console.log("🛒 Maggie Lover Cart System Loaded");
+
+    /* ==========================================
+       CART STORAGE
+    ========================================== */
+
+    const CART_KEY = "maggieLoverCart";
+
+
+    function getCart() {
+        try {
+            return JSON.parse(
+                localStorage.getItem(CART_KEY) || "[]"
+            );
+        } catch (error) {
+            console.error("Cart read error:", error);
+            return [];
+        }
+    }
+
+
+    function saveCart(cart) {
+        localStorage.setItem(
+            CART_KEY,
+            JSON.stringify(cart)
+        );
+
+        console.log("🛒 Cart saved:", cart);
+    }
+
+
+    /* ==========================================
+       FIND EXACT PRODUCT
+    ========================================== */
+
+    function findProductFromCard(card) {
+
+        if (!window.products || !Array.isArray(window.products)) {
+            console.error(
+                "❌ window.products नहीं मिला। product.js पहले load होना चाहिए।"
+            );
+            return null;
+        }
+
+        const cardText = card.innerText || "";
+
+        /*
+         * पहले data-product-id check करो
+         */
+
+        const id =
+            card.dataset.productId ||
+            card.getAttribute("data-product-id");
+
+        if (id) {
+
+            const productById = window.products.find(
+                product => Number(product.id) === Number(id)
+            );
+
+            if (productById) {
+                return productById;
+            }
+        }
+
+
+        /*
+         * अगर ID नहीं है तो product name से पहचानो
+         */
+
+        const productByName = window.products.find(product => {
+
+            if (!product.name) return false;
+
+            return cardText
+                .toLowerCase()
+                .includes(product.name.toLowerCase());
+        });
+
+
+        return productByName || null;
+    }
+
+
+    /* ==========================================
+       FIND PRODUCT CARD
+    ========================================== */
+
+    function findProductCard(button) {
+
+        /*
+         * अगर तुम्हारे card में इनमें से कोई class है
+         */
+
+        const knownCard = button.closest(
+            ".product-card, " +
+            ".food-card, " +
+            ".product-item, " +
+            ".menu-card, " +
+            ".item-card, " +
+            "[data-product-id]"
+        );
+
+        if (knownCard) {
+            return knownCard;
+        }
+
+
+        /*
+         * अगर class अलग है तो ऊपर के parent
+         * में product खोजो
+         */
+
+        let parent = button.parentElement;
+
+        for (let i = 0; i < 8 && parent; i++) {
+
+            if (
+                window.products &&
+                Array.isArray(window.products)
+            ) {
+
+                const text = parent.innerText || "";
+
+                const found = window.products.some(product =>
+                    product.name &&
+                    text.toLowerCase().includes(
+                        product.name.toLowerCase()
+                    )
+                );
+
+                if (found) {
+                    return parent;
+                }
+            }
+
+            parent = parent.parentElement;
+        }
+
+
+        return null;
+    }
+
+
+    /* ==========================================
+       ADD TO CART
+    ========================================== */
+
+    function addProductToCart(product) {
+
+        if (!product) {
+            console.error("❌ Product नहीं मिला");
+            return false;
+        }
+
+
+        let cart = getCart();
+
+
+        const existing = cart.find(
+            item => Number(item.id) === Number(product.id)
+        );
+
+
+        if (existing) {
+
+            existing.quantity =
+                Number(existing.quantity || 1) + 1;
+
+        } else {
+
+            cart.push({
+
+                id: product.id,
+
+                name: product.name,
+
+                category: product.category,
+
+                price: Number(product.price),
+
+                image: product.image,
+
+                description: product.description || "",
+
+                tags: product.tags || [],
+
+                quantity: 1
+
+            });
+        }
+
+
+        saveCart(cart);
+
+        return true;
+    }
+
+
+    /* ==========================================
+       PLUS BUTTON CLICK
+    ========================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            /*
+             * Button या उसके अंदर मौजूद +
+             */
+
+            const button = event.target.closest(
+                "button, .add-btn, .plus-btn, .add-to-cart-btn"
+            );
+
+
+            if (!button) {
+                return;
+            }
+
+
+            /*
+             * सिर्फ + वाले button को पकड़ना
+             */
+
+            const buttonText =
+                button.innerText.trim();
+
+
+            const ariaLabel =
+                (
+                    button.getAttribute("aria-label") || ""
+                ).toLowerCase();
+
+
+            const isPlus =
+                buttonText === "+" ||
+                buttonText.includes("+") ||
+                ariaLabel.includes("add") ||
+                ariaLabel.includes("cart");
+
+
+            if (!isPlus) {
+                return;
+            }
+
+
+            /*
+             * Product card खोजो
+             */
+
+            const card = findProductCard(button);
+
+
+            if (!card) {
+
+                console.error(
+                    "❌ Product card नहीं मिला"
+                );
+
+                return;
+            }
+
+
+            /*
+             * Exact product खोजो
+             */
+
+            const product =
+                findProductFromCard(card);
+
+
+            if (!product) {
+
+                console.error(
+                    "❌ Exact product नहीं मिला"
+                );
+
+                console.log(
+                    "Card text:",
+                    card.innerText
+                );
+
+                return;
+            }
+
+
+            /*
+             * Cart में add करो
+             */
+
+            const added =
+                addProductToCart(product);
+
+
+            if (!added) {
+                return;
+            }
+
+
+            console.log(
+                "✅ Cart में add हुआ:",
+                product.name
+            );
+
+
+            /*
+             * Button animation
+             */
+
+            button.classList.add(
+                "cart-added-animation"
+            );
+
+
+            setTimeout(function () {
+
+                button.classList.remove(
+                    "cart-added-animation"
+                );
+
+            }, 250);
+
+
+            /*
+             * छोटा confirmation
+             */
+
+            showCartToast(
+                product.name + " added to cart"
+            );
+
+
+            /*
+             * Cart count update
+             */
+
+            updateCartCount();
+
+        },
+        true
+    );
+
+
+    /* ==========================================
+       CART COUNT
+    ========================================== */
+
+    function updateCartCount() {
+
+        const cart = getCart();
+
+
+        let totalQuantity = 0;
+
+
+        cart.forEach(item => {
+
+            totalQuantity +=
+                Number(item.quantity || 1);
+
+        });
+
+
+        /*
+         * अगर cart badge मौजूद है
+         */
+
+        const badges =
+            document.querySelectorAll(
+                ".cart-count, " +
+                ".cart-badge, " +
+                "[data-cart-count]"
+            );
+
+
+        badges.forEach(badge => {
+
+            badge.textContent =
+                totalQuantity;
+
+            badge.style.display =
+                totalQuantity > 0
+                    ? "flex"
+                    : "none";
+        });
+
+
+        console.log(
+            "🛒 Total cart quantity:",
+            totalQuantity
+        );
+    }
+
+
+    /* ==========================================
+       CART BUTTON → CART.HTML
+    ========================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const element =
+                event.target.closest(
+                    "a, button, [role='button']"
+                );
+
+
+            if (!element) {
+                return;
+            }
+
+
+            const text =
+                element.innerText
+                    .trim()
+                    .toLowerCase();
+
+
+            const label =
+                (
+                    element.getAttribute(
+                        "aria-label"
+                    ) || ""
+                ).toLowerCase();
+
+
+            /*
+             * Cart navigation
+             */
+
+            if (
+                text === "cart" ||
+                label.includes("cart")
+            ) {
+
+                /*
+                 * अगर already cart.html पर नहीं हैं
+                 */
+
+                if (
+                    !location.pathname
+                        .toLowerCase()
+                        .includes("cart.html")
+                ) {
+
+                    window.location.href =
+                        "cart.html";
+                }
+            }
+
+        },
+        true
+    );
+
+
+    /* ==========================================
+       TOAST
+    ========================================== */
+
+    function showCartToast(message) {
+
+        let toast =
+            document.getElementById(
+                "maggie-cart-toast"
+            );
+
+
+        if (!toast) {
+
+            toast =
+                document.createElement("div");
+
+            toast.id =
+                "maggie-cart-toast";
+
+            toast.style.position =
+                "fixed";
+
+            toast.style.left =
+                "50%";
+
+            toast.style.bottom =
+                "90px";
+
+            toast.style.transform =
+                "translateX(-50%)";
+
+            toast.style.background =
+                "#181818";
+
+            toast.style.color =
+                "#fff";
+
+            toast.style.padding =
+                "12px 18px";
+
+            toast.style.borderRadius =
+                "12px";
+
+            toast.style.fontSize =
+                "13px";
+
+            toast.style.fontWeight =
+                "700";
+
+            toast.style.zIndex =
+                "999999";
+
+            toast.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,.25)";
+
+            toast.style.maxWidth =
+                "85%";
+
+            toast.style.textAlign =
+                "center";
+
+            document.body.appendChild(
+                toast
+            );
+        }
+
+
+        toast.textContent =
+            "✓ " + message;
+
+
+        toast.style.display =
+            "block";
+
+
+        clearTimeout(
+            window.maggieToastTimer
+        );
+
+
+        window.maggieToastTimer =
+            setTimeout(function () {
+
+                toast.style.display =
+                    "none";
+
+            }, 1600);
+    }
+
+
+    /* ==========================================
+       INITIAL CART COUNT
+    ========================================== */
+
+    updateCartCount();
+
+
+    console.log(
+        "✅ Maggie Lover Cart System Ready"
+    );
+
+})();
+  </script>
+
+    <script>
+document.addEventListener("click", function (event) {
+
+    const addButton =
+        event.target.closest(".ml-add-button");
+
+    if (!addButton) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    /* Product card */
+    const card =
+        addButton.closest(".product-card");
+
+    if (!card) {
+        console.error("Product card नहीं मिला");
+        return;
+    }
+
+    /* Product ID */
+    const productId =
+        card.dataset.productId;
+
+    /* Product list */
+    const product =
+        window.products?.find(
+            p => String(p.id) === String(productId)
+        );
+
+    if (!product) {
+        console.error(
+            "Product नहीं मिला:",
+            productId
+        );
+        return;
+    }
+
+    /* =================================
+       1. CART में EXACT PRODUCT ADD
+       ================================= */
+
+    if (typeof addToCart === "function") {
+
+        addToCart(
+            product.name,
+            Number(product.price),
+            product.image
+        );
+
+    } else {
+
+        console.error(
+            "addToCart() function नहीं मिला"
+        );
+
+        return;
+    }
+
+
+    /* =================================
+       2. SUCCESS
+    ================================= */
+
+    addButton.textContent = "✓";
+
+
+    /* =================================
+       3. CART.HTML OPEN
+    ================================= */
+
+    setTimeout(function () {
+
+        window.location.href = "cart.html";
+
+    }, 300);
+
+});
+    </script>
+<script>
+document.addEventListener("click", function (e) {
+
+    const btn = e.target.closest(".ml-add-button");
+
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    /* Product card */
+    const card = btn.closest(".product-card");
+
+    if (!card) {
+        console.error("Product card nahi mila");
+        return;
+    }
+
+    /* Product ID */
+    const productId = card.getAttribute("data-product-id");
+
+    if (!productId) {
+        console.error("Product ID nahi mila");
+        return;
+    }
+
+    /* product.js se exact product */
+    const product = products.find(function (item) {
+        return String(item.id) === String(productId);
+    });
+
+    if (!product) {
+        console.error("Product nahi mila:", productId);
+        return;
+    }
+
+    /* Existing Cart System */
+    if (typeof addToCart === "function") {
+
+        addToCart(
+            product.name,
+            Number(product.price),
+            product.image
+        );
+
+        /* Success */
+        btn.innerHTML = "✓";
+
+        setTimeout(function () {
+            btn.innerHTML = "+";
+        }, 800);
+
+        console.log(
+            "Added to Cart:",
+            product.name
+        );
+
+    } else {
+
+        console.error(
+            "addToCart function nahi mila"
+        );
+
+    }
+
+});
+      </script>
+
+    
+<script src="catalog-sync.js"></script>
+
+<script id="maggie-universal-nav-active">
+document.addEventListener('DOMContentLoaded',function(){var p=(location.pathname.split('/').pop()||'index.html').toLowerCase();var map={'index.html':'index.html','categories.html':'categories.html','cart.html':'cart.html','orders.html':'orders.html','tracking.html':'orders.html','order-success.html':'orders.html','account.html':'account.html','search.html':'categories.html','see-all.html':'categories.html','product.html':'categories.html','checkout.html':'cart.html','buy.now.html':'cart.html'};var active=map[p]||'';document.querySelectorAll('.bottom-nav .nav-item').forEach(function(a){var href=(a.getAttribute('href')||'').toLowerCase();a.classList.toggle('active',!!active&&href===active);});});
+</script>
+
+<style id="maggie-final-identical-navigation">
+/* Final shared navigation override: same dimensions and appearance on every page */
+:root{--maggie-nav-height:66px;}
+.bottom-nav{position:fixed!important;inset:auto 0 0 0!important;top:auto!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;min-height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;box-sizing:border-box!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-around!important;gap:0!important;margin:0!important;padding:5px 4px calc(5px + env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.98)!important;border-top:1px solid #eadfd3!important;box-shadow:0 -4px 18px rgba(0,0,0,.09)!important;z-index:2147483000!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;}
+.bottom-nav .nav-item{position:static!important;flex:1 1 20%!important;width:20%!important;max-width:20%!important;min-width:0!important;height:54px!important;min-height:54px!important;margin:0!important;padding:5px 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;box-sizing:border-box!important;text-decoration:none!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#777!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important;transform:none!important;}
+.bottom-nav .nav-item svg{display:block!important;width:21px!important;height:21px!important;min-width:21px!important;min-height:21px!important;flex:0 0 21px!important;margin:0!important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block!important;margin:0!important;padding:0!important;font-size:10px!important;line-height:12px!important;font-weight:500!important;}
+.bottom-nav .nav-item.active{color:#e56b24!important;background:transparent!important;font-weight:700!important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700!important;}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important;}
+@media(min-width:700px){.bottom-nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(100%,520px)!important;border-left:1px solid #eadfd3!important;border-right:1px solid #eadfd3!important;border-radius:16px 16px 0 0!important;}}
+/* Keep navigation transitions smooth when supported; normal navigation remains fallback */
+@view-transition{navigation:auto;}
+::view-transition-old(root),::view-transition-new(root){animation-duration:160ms;}
+</style>
+</body>
+</html>
