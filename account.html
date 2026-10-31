@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<title>My Account - Maggie Lover</title>
+
+<style>
+html,body{touch-action:manipulation;-ms-touch-action:manipulation;overscroll-behavior-x:none;}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff8ed;
+  color:#21160c;
+}
+
+.account-page{
+  min-height:100vh;
+  padding:16px 16px 115px;
+  max-width:700px;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.top-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+.back-btn{
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:15px;
+  background:#fff;
+  font-size:24px;
+  box-shadow:0 8px 20px rgba(40,20,5,.08);
+}
+
+.top-title{
+  text-align:center;
+}
+
+.top-title small{
+  display:block;
+  color:#9a7440;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.top-title strong{
+  font-size:20px;
+}
+
+.top-space{
+  width:44px;
+}
+
+/* ================= PROFILE ================= */
+
+.profile-card{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(255,183,3,.28),transparent 35%),
+    linear-gradient(135deg,#211407,#4a2d12);
+  color:white;
+  border-radius:30px;
+  padding:28px 20px 24px;
+  text-align:center;
+  box-shadow:0 22px 45px rgba(42,22,5,.25);
+}
+
+.profile-card:before{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  top:-80px;
+  left:-60px;
+}
+
+.profile-avatar{
+  position:relative;
+  width:88px;
+  height:88px;
+  margin:auto;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+
+.profile-card h2{
+  margin:15px 0 5px;
+  font-size:24px;
+}
+
+.profile-card p{
+  margin:0 0 14px;
+  color:#f4dfc5;
+  font-size:14px;
+}
+
+.verified{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 15px;
+  border-radius:999px;
+  background:#ffb703;
+  color:#211407;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* ================= QUICK STATS ================= */
+
+.quick-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:15px 0 24px;
+}
+
+.stat{
+  background:white;
+  border-radius:20px;
+  padding:15px 8px;
+  text-align:center;
+  box-shadow:0 8px 22px rgba(40,20,5,.07);
+}
+
+.stat-icon{
+  font-size:22px;
+}
+
+.stat strong{
+  display:block;
+  margin-top:5px;
+  font-size:16px;
+}
+
+.stat small{
+  color:#8b765f;
+  font-size:11px;
+}
+
+/* ================= SECTION ================= */
+
+.section-title{
+  margin:24px 6px 10px;
+  color:#98713c;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+  width:100%;
+  border:none;
+  background:white;
+  border-radius:22px;
+  padding:15px;
+  margin:11px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  text-align:left;
+  box-shadow:0 9px 24px rgba(40,20,5,.07);
+  cursor:pointer;
+  transition:.15s ease;
+}
+
+.card:active{
+  transform:scale(.98);
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.icon{
+  width:54px;
+  height:54px;
+  flex-shrink:0;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff2d2;
+  font-size:25px;
+}
+
+.card strong{
+  display:block;
+  color:#21160c;
+  font-size:16px;
+}
+
+.card p{
+  margin:5px 0 0;
+  color:#817364;
+  font-size:12px;
+}
+
+.arrow{
+  color:#a27b47;
+  font-size:27px;
+  margin-left:10px;
+}
+
+/* ================= SPECIAL CARD ================= */
+
+.reward-card{
+  background:linear-gradient(135deg,#fff1c9,#fffaf1);
+  border:1px solid #f6dfad;
+}
+
+.reward-card .icon{
+  background:#ffd76a;
+}
+
+.reward-badge{
+  display:inline-block;
+  margin-top:6px;
+  padding:4px 8px;
+  border-radius:8px;
+  background:#ffb703;
+  color:#21160c;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* ================= LOGOUT ================= */
+
+.logout{
+  width:100%;
+  border:none;
+  margin-top:18px;
+  padding:17px;
+  border-radius:20px;
+  background:#fff;
+  color:#d62845;
+  font-size:15px;
+  font-weight:900;
+  box-shadow:0 9px 24px rgba(40,20,5,.06);
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:76px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+  border-top:1px solid #eee5da;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:7px 4px;
+  z-index:9999;
+}
+
+.nav-item{
+  min-width:58px;
+  text-decoration:none;
+  color:#877665;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.nav-item span{
+  font-size:21px;
+}
+
+.nav-item.active{
+  color:#f47b00;
+}
+
+.nav-item.active span{
+  transform:translateY(-1px);
+}
+
+.cart-icon-wrap{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  right:-9px;
+  top:-7px;
+  min-width:17px;
+  height:17px;
+  padding:2px 4px;
+  border-radius:999px;
+  background:#f47b00;
+  color:#fff;
+  font-size:9px;
+  text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:380px){
+  .account-page{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .profile-card h2{
+    font-size:21px;
+  }
+
+  .card{
+    padding:13px;
+  }
+
+  .icon{
+    width:50px;
+    height:50px;
+  }
+}
+</style>
+<script src="api.js"></script>
+
+<style id="maggie-universal-bottom-navigation">
+/* Universal fixed navigation: identical on every customer page */
+html{scroll-padding-bottom:calc(76px + env(safe-area-inset-bottom)) !important;}
+body{padding-bottom:calc(88px + env(safe-area-inset-bottom)) !important;}
+.bottom-nav{position:fixed !important;left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;transform:none !important;width:100% !important;max-width:none !important;height:calc(66px + env(safe-area-inset-bottom)) !important;min-height:calc(66px + env(safe-area-inset-bottom)) !important;box-sizing:border-box !important;display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-around !important;gap:0 !important;margin:0 !important;padding:5px 4px calc(5px + env(safe-area-inset-bottom)) !important;background:rgba(255,255,255,.98) !important;border-top:1px solid #eadfd3 !important;box-shadow:0 -4px 18px rgba(0,0,0,.09) !important;z-index:2147483000 !important;visibility:visible !important;opacity:1 !important;pointer-events:auto !important;}
+.bottom-nav .nav-item{position:static !important;flex:1 1 20% !important;width:20% !important;max-width:20% !important;min-width:0 !important;height:54px !important;min-height:54px !important;margin:0 !important;padding:5px 0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;gap:3px !important;box-sizing:border-box !important;text-decoration:none !important;border:0 !important;border-radius:10px !important;background:transparent !important;color:#777 !important;font-size:11px !important;line-height:1.1 !important;white-space:nowrap !important;transform:none !important;}
+.bottom-nav .nav-item svg{display:block !important;width:21px !important;height:21px !important;min-width:21px !important;min-height:21px !important;flex:0 0 21px !important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block !important;margin:0 !important;padding:0 !important;font-size:10px !important;line-height:12px !important;font-weight:500 !important;}
+.bottom-nav .nav-item.active{color:#e56b24 !important;background:transparent !important;font-weight:700 !important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700 !important;}
+@media(min-width:700px){.bottom-nav{left:50% !important;right:auto !important;transform:translateX(-50%) !important;width:min(100%,520px) !important;border-left:1px solid #eadfd3 !important;border-right:1px solid #eadfd3 !important;border-radius:16px 16px 0 0 !important;}}
+</style>
+<!-- maggie-nav-prefetch -->
+
+<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="categories.html" as="document">
+<link rel="prefetch" href="cart.html" as="document">
+<link rel="prefetch" href="orders.html" as="document">
+<link rel="prefetch" href="account.html" as="document">
+</head>
+
+<body>
+
+<div class="account-page">
+
+  <!-- TOP HEADER -->
+  <div class="top-header">
+
+    <button class="back-btn" onclick="history.back()">‹</button>
+
+    <div class="top-title">
+      <small>MAGGIE LOVER</small>
+      <strong>My Account</strong>
+    </div>
+
+    <div class="top-space"></div>
+
+  </div>
+
+
+  <!-- PROFILE -->
+  <div class="profile-card">
+
+    <div class="profile-avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/>
+    </svg></div>
+
+    <h2 id="profileName">Maggie Lover Customer</h2>
+
+    <p id="headerPhone">+91 85788 78877</p>
+
+    <span class="verified">
+      ✓ Verified Customer
+    </span>
+
+  </div>
+
+
+  <!-- QUICK STATS -->
+  <div class="quick-stats">
+
+    <div class="stat">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 3h12l2 4v14H4V7l2-4z"/>
+  <path d="M4 7h16"/>
+  <path d="M9 11h6"/>
+  <path d="M9 15h4"/>
+      </svg></div>
+      <strong id="orderCount">0</strong>
+      <small>Orders</small>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A5 5 0 0 1 12 5.5a5 5 0 0 1 8.8 3.3z"/>
+      </svg></div>
+      <strong>0</strong>
+      <small>Wishlist</small>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/>
+  <path d="M2 7h20v5H2z"/>
+  <path d="M12 7v15"/>
+  <path d="M12 7H8.5a2.5 2.5 0 1 1 2.5-2.5C11 6 12 7 12 7z"/>
+  <path d="M12 7h3.5A2.5 2.5 0 1 0 13 4.5C13 6 12 7 12 7z"/>
+      </svg></div>
+      <strong>₹0</strong>
+      <small>Rewards</small>
+    </div>
+
+  </div>
+
+
+  <!-- ACCOUNT -->
+  <div class="section-title">
+    My Account
+  </div>
+
+
+  <div class="card" onclick="editProfile()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
+  <path d="M16.5 3.5l4 4-6.5 6.5-3 .5.5-3z"/>
+      </svg></div>
+
+      <div>
+        <strong>Edit Profile</strong>
+        <p>Update your name</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <div class="card" onclick="changePhone()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="7" y="2.5" width="10" height="19" rx="2"/>
+  <path d="M10 18.5h4"/>
+      </svg></div>
+
+      <div>
+        <strong>Mobile Number</strong>
+        <p id="profilePhone">+91 0000000000</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <div class="card" onclick="location.href='orders.html'">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 3h12l2 4v14H4V7l2-4z"/>
+  <path d="M4 7h16"/>
+  <path d="M9 11h6"/>
+  <path d="M9 15h4"/>
+      </svg></div>
+
+      <div>
+        <strong>My Orders</strong>
+        <p>Track and manage your orders</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <div class="card" onclick="addAddress()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/>
+  <circle cx="12" cy="10" r="2.5"/>
+      </svg></div>
+
+      <div>
+        <strong>Delivery Address</strong>
+        <p id="addressText">Add your delivery address</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <!-- REWARDS -->
+  <div class="section-title">
+    Rewards & Offers
+  </div>
+
+
+  <div class="card reward-card" onclick="showRewards()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/>
+  <path d="M2 7h20v5H2z"/>
+  <path d="M12 7v15"/>
+  <path d="M12 7H8.5a2.5 2.5 0 1 1 2.5-2.5C11 6 12 7 12 7z"/>
+  <path d="M12 7h3.5A2.5 2.5 0 1 0 13 4.5C13 6 12 7 12 7z"/>
+      </svg></div>
+
+      <div>
+        <strong>Maggie Lover Rewards</strong>
+        <p>Earn rewards on your orders</p>
+        <span class="reward-badge">COMING SOON</span>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <!-- CONTACT -->
+  <div class="section-title">
+    Contact Maggie Lover
+  </div>
+
+
+  <div class="card" onclick="callMaggie()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 16.5v3a2 2 0 0 1-2.2 2A18.8 18.8 0 0 1 10.6 18a18.5 18.5 0 0 1-6-6A18.8 18.8 0 0 1 2.5 5.2 2 2 0 0 1 4.5 3h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.4 10.4a15 15 0 0 0 5.2 5.2l.9-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+      </svg></div>
+
+      <div>
+        <strong>Call Maggie Lover</strong>
+        <p>85788 78877</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card" onclick="openWhatsApp()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.2A8 8 0 1 1 20 11.5z"/>
+  <path d="M8.5 8.5c.3-.7.6-.7 1-.7h.5c.3 0 .5.1.6.4l.7 1.6c.1.3.1.5-.1.7l-.6.7c.8 1.4 1.9 2.4 3.4 3.1l.6-.7c.2-.2.4-.3.7-.2l1.6.7c.3.1.4.3.4.6v.5"/>
+      </svg></div>
+
+      <div>
+        <strong>WhatsApp Support</strong>
+        <p>Chat with our support team</p>
+      </div>
+
+    </div>
+
+    <span>›</span>
+
+  </div>
+
+
+  <!-- SUPPORT -->
+  <div class="section-title">
+    Support & Information
+  </div>
+
+
+  <div class="card" onclick="showHelp()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M9.5 9a2.5 2.5 0 1 1 4.1 1.9c-.9.7-1.6 1.1-1.6 2.6"/>
+  <path d="M12 17h.01"/>
+      </svg></div>
+
+      <div>
+        <strong>Help Center</strong>
+        <p>Get help with your order</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <div class="card" onclick="showPrivacy()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21.5s7.5-3.8 7.5-9.5V5l-7.5-3-7.5 3v7c0 5.7 7.5 9.5 7.5 9.5z"/>
+  <path d="M9 12l2 2 4-4"/>
+      </svg></div>
+
+      <div>
+        <strong>Privacy Policy</strong>
+        <p>Your privacy matters to us</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <div class="card" onclick="showAbout()">
+
+    <div class="left">
+
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M12 11v6"/>
+  <path d="M12 8h.01"/>
+      </svg></div>
+
+      <div>
+        <strong>About Maggie Lover</strong>
+        <p>World Most Famous Handi Maggi</p>
+      </div>
+
+    </div>
+
+    <span class="arrow">›</span>
+
+  </div>
+
+
+  <!-- LOGOUT -->
+
+  <button class="logout" onclick="logout()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="1.8"
+  stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4"/>
+  <path d="M14 8l4 4-4 4"/>
+  <path d="M18 12H9"/>
+    </svg>Logout
+  </button>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 10.5L12 3l9 7.5"/>
+  <path d="M5 9.5V21h14V9.5"/>
+  <path d="M9 21v-6h6v6"/>
+</svg>
+<small>Home</small>
+</a>
+
+<a
+  class="nav-item"
+  href="categories.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="6" height="6" rx="1"/>
+  <rect x="14" y="4" width="6" height="6" rx="1"/>
+  <rect x="4" y="14" width="6" height="6" rx="1"/>
+  <rect x="14" y="14" width="6" height="6" rx="1"/>
+ </svg>
+<small>Categories</small>
+</a>
+
+<a
+  class="nav-item"
+  href="cart.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.2"/>
+  <circle cx="18" cy="20" r="1.2"/>
+</svg>
+<small>Cart</small>
+</a>
+
+<a
+  class="nav-item"
+  href="orders.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 7h14v14H5z"/>
+  <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+ </svg>
+<small>Orders</small>
+</a>
+
+<a
+  class="nav-item active"
+  href="account.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/>
+</svg>
+<small>Account</small>
+</a>
+
+</nav>
+
+
+<script>
+
+/* ================= PROFILE ================= */
+
+function editProfile(){
+
+  const oldName =
+    localStorage.getItem("profileName") ||
+    document.getElementById("profileName").innerText;
+
+  const newName = prompt(
+    "Enter your name",
+    oldName
+  );
+
+  if(newName && newName.trim()){
+
+    const name = newName.trim();
+
+    localStorage.setItem(
+      "profileName",
+      name
+    );
+
+    document.getElementById(
+      "profileName"
+    ).innerText = name;
+
+  }
+
+}
+
+
+/* ================= PHONE ================= */
+
+function changePhone(){
+
+  let current =
+    localStorage.getItem("profilePhone") ||
+    "8578878877";
+
+  current =
+    current
+      .replace("+91 ","")
+      .replace(/\s/g,"");
+
+  let phone = prompt(
+    "Enter 10-digit mobile number",
+    current
+  );
+
+  if(phone === null) return;
+
+  phone =
+    phone.replace(/\D/g,"");
+
+  if(phone.length !== 10){
+
+    alert(
+      "Please enter a valid 10-digit mobile number."
+    );
+
+    return;
+  }
+
+  const formatted =
+    "+91 " +
+    phone.slice(0,5) +
+    " " +
+    phone.slice(5);
+
+  localStorage.setItem(
+    "profilePhone",
+    formatted
+  );
+
+  document.getElementById(
+    "profilePhone"
+  ).innerText = formatted;
+
+  document.getElementById(
+    "headerPhone"
+  ).innerText = formatted;
+
+  alert(
+    "Mobile number updated successfully ✅"
+  );
+
+}
+
+
+/* ================= ADDRESS ================= */
+
+function addAddress(){
+
+  const oldAddress =
+    localStorage.getItem("savedAddress") || "";
+
+  const address = prompt(
+    "Enter your delivery address",
+    oldAddress
+  );
+
+  if(address && address.trim()){
+
+    localStorage.setItem(
+      "savedAddress",
+      address.trim()
+    );
+
+    document.getElementById(
+      "addressText"
+    ).innerText = address.trim();
+
+    alert(
+      "Delivery address saved successfully ✅"
+    );
+
+  }
+
+}
+
+
+/* ================= REWARDS ================= */
+
+function showRewards(){
+
+  alert(
+    "🎁 Maggie Lover Rewards\n\n" +
+    "Earn exciting rewards on your orders.\n\n" +
+    "Rewards system is coming soon."
+  );
+
+}
+
+
+/* ================= CALL ================= */
+
+function callMaggie(){
+
+  window.location.href =
+    "tel:8578878877";
+
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function openWhatsApp(){
+
+  window.open(
+    "https://wa.me/918578878877",
+    "_blank"
+  );
+
+}
+
+
+/* ================= HELP ================= */
+
+function showHelp(){
+
+  alert(
+    "HELP CENTER\n\n" +
+    "Need help with your order?\n\n" +
+    "📞 85788 78877\n\n" +
+    "Support Hours:\n" +
+    "10:00 AM – 10:00 PM\n\n" +
+    "You can contact Maggie Lover for:\n" +
+    "• Order issues\n" +
+    "• Delivery problems\n" +
+    "• Payment problems\n" +
+    "• Refund & cancellation\n" +
+    "• App support\n" +
+    "• Feedback"
+  );
+
+}
+
+
+/* ================= PRIVACY ================= */
+
+function showPrivacy(){
+
+  alert(
+    "PRIVACY POLICY\n\n" +
+    "Maggie Lover – Spicy Corner\n\n" +
+    "We respect your privacy and protect " +
+    "your personal information.\n\n" +
+    "Your information may be used for " +
+    "order processing, delivery, customer " +
+    "support and improving our services.\n\n" +
+    "We do not sell your personal data.\n\n" +
+    "For privacy-related requests contact:\n" +
+    "85788 78877"
+  );
+
+}
+
+
+/* ================= ABOUT ================= */
+
+function showAbout(){
+
+  alert(
+    "MAGGIE LOVER – SPICY CORNER\n\n" +
+    "🌟 World Most Famous Handi Maggi\n\n" +
+    "📍 Gaya, Bihar\n" +
+    "📲 @maggi_lover_gaya\n\n" +
+    "Our menu includes:\n" +
+    "🍜 Handi Maggi\n" +
+    "🍝 Pasta\n" +
+    "🥟 Momos\n" +
+    "🍕 Pizza\n" +
+    "🧀 Paneer\n" +
+    "🌶️ Manchurian\n\n" +
+    "Thank you for choosing Maggie Lover ❤️"
+  );
+
+}
+
+
+/* ================= LOGOUT ================= */
+
+function logout(){
+
+  if(confirm(
+    "Are you sure you want to logout?"
+  )){
+
+    /* Remove login/profile session data only.
+       Orders, cart and saved address are kept. */
+    localStorage.removeItem("maggieLoverUser");
+    localStorage.removeItem("profileName");
+    localStorage.removeItem("profilePhone");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userPhone");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("isLoggedIn");
+
+    alert(
+      "Logged out successfully ✅"
+    );
+
+    /* Return to the main app so its login/create-account
+       screen is shown because no user is saved. */
+    window.location.href = "index.html";
+
+  }
+
+}
+
+
+/* ================= LOAD DATA ================= */
+
+window.addEventListener(
+  "load",
+  function(){
+
+    const savedName =
+      localStorage.getItem("profileName");
+
+    if(savedName){
+
+      document.getElementById(
+        "profileName"
+      ).innerText = savedName;
+
+    }
+
+
+    const savedPhone =
+      localStorage.getItem("profilePhone");
+
+    if(savedPhone){
+
+      document.getElementById(
+        "profilePhone"
+      ).innerText = savedPhone;
+
+      document.getElementById(
+        "headerPhone"
+      ).innerText = savedPhone;
+
+    }
+
+
+    const savedAddress =
+      localStorage.getItem("savedAddress");
+
+    if(savedAddress){
+
+      document.getElementById(
+        "addressText"
+      ).innerText = savedAddress;
+
+    }
+
+
+    let cart = [];
+    try {
+      const savedCart = localStorage.getItem("maggieCart");
+      cart = savedCart ? JSON.parse(savedCart) : [];
+      if (!Array.isArray(cart)) cart = [];
+    } catch (error) {
+      cart = [];
+    }
+
+    updateCartCount();
+
+  }
+);
+
+  /* ================= ACCOUNT ENHANCEMENTS ================= */
+
+// Cart count update
+function updateCartCount(){
+
+  let cart = [];
+  try {
+    const savedCart = localStorage.getItem("maggieCart");
+    cart = savedCart ? JSON.parse(savedCart) : [];
+    if (!Array.isArray(cart)) cart = [];
+  } catch (error) {
+    cart = [];
+  }
+
+  const count =
+    document.getElementById("cartCount");
+
+  const totalQty = Array.isArray(cart)
+    ? cart.reduce((total, item) => total + Number(item.qty || item.quantity || 1), 0)
+    : 0;
+
+  if(count){
+    count.innerText = totalQty;
+  }
+}
+
+
+// Order count update
+function updateOrderCount(){
+
+  let orders = [];
+  try {
+    const savedOrders = localStorage.getItem("maggieOrders");
+    orders = savedOrders ? JSON.parse(savedOrders) : [];
+    if (!Array.isArray(orders)) orders = [];
+  } catch (error) {
+    orders = [];
+  }
+
+  const orderCount =
+    document.getElementById("orderCount");
+
+  if(orderCount){
+    orderCount.innerText = orders.length;
+  }
+}
+
+
+// Update account information
+function refreshAccount(){
+
+  const savedName =
+    localStorage.getItem("profileName");
+
+  if(savedName){
+    document.getElementById(
+      "profileName"
+    ).innerText = savedName;
+  }
+
+
+  const savedPhone =
+    localStorage.getItem("profilePhone");
+
+  if(savedPhone){
+
+    document.getElementById(
+      "profilePhone"
+    ).innerText = savedPhone;
+
+    document.getElementById(
+      "headerPhone"
+    ).innerText = savedPhone;
+
+  }
+
+
+  const savedAddress =
+    localStorage.getItem("savedAddress");
+
+  if(savedAddress){
+
+    document.getElementById(
+      "addressText"
+    ).innerText = savedAddress;
+
+  }
+
+
+  updateCartCount();
+  updateOrderCount();
+
+}
+
+
+// Refresh whenever page becomes visible
+window.addEventListener("pageshow", function () {
+  updateCartCount();
+  updateOrderCount();
+});
+
+window.addEventListener("storage", function (event) {
+  if (event.key === "maggieCart") updateCartCount();
+  if (event.key === "maggieOrders") updateOrderCount();
+});
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    if(!document.hidden){
+      refreshAccount();
+    }
+
+  }
+);
+
+
+// Refresh when returning to page
+window.addEventListener(
+  "pageshow",
+  function(){
+    refreshAccount();
+  }
+);
+
+</script>
+  
+  
+
+<script src="catalog-sync.js"></script>
+
+<script id="maggie-universal-nav-active">
+document.addEventListener('DOMContentLoaded',function(){var p=(location.pathname.split('/').pop()||'index.html').toLowerCase();var map={'index.html':'index.html','categories.html':'categories.html','cart.html':'cart.html','orders.html':'orders.html','tracking.html':'orders.html','order-success.html':'orders.html','account.html':'account.html','search.html':'categories.html','see-all.html':'categories.html','product.html':'categories.html','checkout.html':'cart.html','buy.now.html':'cart.html'};var active=map[p]||'';document.querySelectorAll('.bottom-nav .nav-item').forEach(function(a){var href=(a.getAttribute('href')||'').toLowerCase();a.classList.toggle('active',!!active&&href===active);});});
+</script>
+
+<style id="maggie-final-identical-navigation">
+/* Final shared navigation override: same dimensions and appearance on every page */
+:root{--maggie-nav-height:66px;}
+.bottom-nav{position:fixed!important;inset:auto 0 0 0!important;top:auto!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;min-height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;box-sizing:border-box!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-around!important;gap:0!important;margin:0!important;padding:5px 4px calc(5px + env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.98)!important;border-top:1px solid #eadfd3!important;box-shadow:0 -4px 18px rgba(0,0,0,.09)!important;z-index:2147483000!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;}
+.bottom-nav .nav-item{position:static!important;flex:1 1 20%!important;width:20%!important;max-width:20%!important;min-width:0!important;height:54px!important;min-height:54px!important;margin:0!important;padding:5px 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;box-sizing:border-box!important;text-decoration:none!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#777!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important;transform:none!important;}
+.bottom-nav .nav-item svg{display:block!important;width:21px!important;height:21px!important;min-width:21px!important;min-height:21px!important;flex:0 0 21px!important;margin:0!important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block!important;margin:0!important;padding:0!important;font-size:10px!important;line-height:12px!important;font-weight:500!important;}
+.bottom-nav .nav-item.active{color:#e56b24!important;background:transparent!important;font-weight:700!important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700!important;}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important;}
+@media(min-width:700px){.bottom-nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(100%,520px)!important;border-left:1px solid #eadfd3!important;border-right:1px solid #eadfd3!important;border-radius:16px 16px 0 0!important;}}
+/* Keep navigation transitions smooth when supported; normal navigation remains fallback */
+@view-transition{navigation:auto;}
+::view-transition-old(root),::view-transition-new(root){animation-duration:160ms;}
+</style>
+</body>
+</html>

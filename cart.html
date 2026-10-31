@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <title>Cart - Maggie Lover</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+<style>
+html,body{touch-action:manipulation;-ms-touch-action:manipulation;overscroll-behavior-x:none;}
+
+
+/* ==========================================
+   MAGGIE LOVER — PREMIUM CART
+========================================== */
+
+body{
+  margin:0;
+  background:#fffaf3;
+  color:#28190c;
+}
+
+.cart-page{
+  padding:0 4px 20px;
+}
+
+
+/* ==========================================
+   CART HEADER
+========================================== */
+
+.cart-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 2px 15px;
+}
+
+.cart-back-btn{
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  border:0;
+  border-radius:15px;
+  background:#ffffff;
+  color:#28190c;
+  font-size:25px;
+  font-weight:500;
+  box-shadow:0 8px 22px rgba(55,35,10,.09);
+  cursor:pointer;
+}
+
+.cart-header-text{
+  flex:1;
+  min-width:0;
+}
+
+.cart-header-text small{
+  display:block;
+  margin-bottom:3px;
+  color:#a4773d;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.cart-header-text h1{
+  margin:0;
+  color:#241608;
+  font-size:21px;
+  font-weight:900;
+}
+
+.cart-header-text p{
+  margin:3px 0 0;
+  color:#8c8175;
+  font-size:12px;
+}
+
+.cart-header-icon{
+  width:45px;
+  height:45px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:15px;
+  background:linear-gradient(
+    135deg,
+    #ffb300,
+    #ff7100
+  );
+  color:#fff;
+  font-size:21px;
+  box-shadow:
+    0 10px 24px rgba(255,120,0,.25);
+}
+
+
+/* ==========================================
+   EMPTY CART
+========================================== */
+
+.empty-cart{
+  margin-top:12px;
+  padding:45px 20px;
+  text-align:center;
+  background:#fff;
+  border-radius:28px;
+  box-shadow:
+    0 12px 30px rgba(55,35,10,.07);
+}
+
+.empty-cart-icon{
+  width:92px;
+  height:92px;
+  margin:0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:30px;
+  background:#fff3d7;
+  font-size:44px;
+}
+
+.empty-cart h2{
+  margin:0 0 7px;
+  color:#25170b;
+  font-size:23px;
+  font-weight:900;
+}
+
+.empty-cart p{
+  margin:0 0 22px;
+  color:#8c8175;
+  font-size:13px;
+}
+
+.start-order-btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:17px;
+  background:linear-gradient(
+    135deg,
+    #ffb000,
+    #ff7000
+  );
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  box-shadow:
+    0 10px 22px rgba(255,120,0,.24);
+}
+
+
+/* ==========================================
+   CART ITEMS TITLE
+========================================== */
+
+.cart-items-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:17px 3px 12px;
+}
+
+.cart-items-title h2{
+  margin:0;
+  color:#28190c;
+  font-size:19px;
+  font-weight:900;
+}
+
+.cart-items-title span{
+  color:#9b7650;
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* ==========================================
+   CART PRODUCT CARD
+========================================== */
+
+.cart-product{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+  padding:12px;
+  background:#fff;
+  border-radius:23px;
+  border:1px solid rgba(145,100,30,.06);
+  box-shadow:
+    0 9px 25px rgba(55,35,10,.075);
+}
+
+.cart-product-img{
+  width:88px;
+  height:88px;
+  flex-shrink:0;
+  object-fit:cover;
+  border-radius:19px;
+  background:#f7ead7;
+}
+
+.cart-product-info{
+  flex:1;
+  min-width:0;
+}
+
+.cart-product-info h3{
+  margin:0 0 5px;
+  color:#241608;
+  font-size:15px;
+  line-height:1.3;
+  font-weight:900;
+}
+
+.cart-product-price{
+  margin-bottom:7px;
+  color:#e66e00;
+  font-size:15px;
+  font-weight:900;
+}
+
+.cart-product-total{
+  margin-top:7px;
+  color:#33200f;
+  font-size:13px;
+  font-weight:900;
+}
+
+
+/* ==========================================
+   QUANTITY BOX
+========================================== */
+
+.quantity-box{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  overflow:hidden;
+  border:1px solid #ffe0ad;
+  border-radius:12px;
+  background:#fff5e5;
+}
+
+.quantity-box button{
+  width:32px;
+  height:31px;
+  border:0;
+  background:transparent;
+  color:#e87500;
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.quantity-box span{
+  min-width:28px;
+  text-align:center;
+  color:#33200f;
+  font-size:14px;
+  font-weight:900;
+}
+
+
+/* ==========================================
+   REMOVE BUTTON
+========================================== */
+
+.remove-cart-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:31px;
+  height:31px;
+  border:0;
+  border-radius:10px;
+  background:#fff0ed;
+  color:#df4d35;
+  font-size:14px;
+  cursor:pointer;
+}
+
+
+/* ==========================================
+   BILL SUMMARY
+========================================== */
+
+.bill-summary{
+  margin-top:18px;
+  padding:19px;
+  background:#fff;
+  border-radius:25px;
+  box-shadow:
+    0 12px 30px rgba(50,30,10,.08);
+}
+
+.bill-summary-title{
+  margin-bottom:12px;
+  color:#28190c;
+  font-size:18px;
+  font-weight:900;
+}
+
+.bill-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:9px 0;
+  color:#71675c;
+  font-size:14px;
+}
+
+.bill-row strong{
+  color:#312112;
+}
+
+.bill-divider{
+  height:1px;
+  margin:8px 0;
+  background:#eee4d8;
+}
+
+.delivery-note{
+  margin:8px 0;
+  padding:10px 12px;
+  border-radius:13px;
+  background:#fff6df;
+  color:#9a6515;
+  font-size:12px;
+  font-weight:800;
+}
+
+.grand-total{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:10px;
+}
+
+.grand-total span{
+  color:#241608;
+  font-size:17px;
+  font-weight:900;
+}
+
+.grand-total strong{
+  color:#e96e00;
+  font-size:21px;
+  font-weight:900;
+}
+
+
+/* ==========================================
+   CHECKOUT BUTTON
+========================================== */
+
+.checkout-btn{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin-top:16px;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(
+    135deg,
+    #ffb000,
+    #ff7000
+  );
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:900;
+  box-shadow:
+    0 12px 25px rgba(255,120,0,.25);
+}
+
+
+/* ==========================================
+   RECOMMEND FOR YOU
+========================================== */
+
+.recommend-section{
+  margin-top:27px;
+}
+
+.recommend-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:13px;
+}
+
+.recommend-header small{
+  display:block;
+  margin-bottom:3px;
+  color:#a4773d;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+
+.recommend-header h2{
+  margin:0;
+  color:#28190c;
+  font-size:20px;
+  font-weight:900;
+}
+
+.recommend-header span{
+  padding:7px 10px;
+  border-radius:12px;
+  background:#fff1d8;
+  color:#e87500;
+  font-size:11px;
+  font-weight:900;
+}
+
+
+/* ==========================================
+   RECOMMEND — TWO PRODUCTS PER ROW
+========================================== */
+
+.recommend-slider{
+  display:grid;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  gap:14px;
+  padding:2px 1px 15px;
+}
+
+
+/* ==========================================
+   RECOMMEND CARD
+========================================== */
+
+.recommend-card{
+  min-width:0;
+  overflow:hidden;
+  background:#fff;
+  border-radius:21px;
+  border:1px solid rgba(145,100,30,.06);
+  box-shadow:
+    0 10px 25px rgba(50,30,10,.08);
+}
+
+.recommend-card img{
+  display:block;
+  width:100%;
+  height:145px;
+  object-fit:cover;
+  background:#f7ead7;
+}
+
+.recommend-info{
+  padding:11px;
+}
+
+.recommend-info h4{
+  margin:0 0 5px;
+  color:#25170b;
+  font-size:14px;
+  line-height:1.3;
+  font-weight:900;
+
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+
+.recommend-info p{
+  margin:0 0 9px;
+  color:#e87500;
+  font-size:15px;
+  font-weight:900;
+}
+
+.recommend-btn{
+  width:100%;
+  padding:10px 5px;
+  border:0;
+  border-radius:12px;
+  background:#fff1d8;
+  color:#e66f00;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.recommend-btn:active{
+  transform:scale(.96);
+}
+
+
+/* ==========================================
+   BOTTOM NAV
+========================================== */
+
+.universal-nav {
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #ffffff;
+  border: 1.5px solid #d9dee5;
+  border-radius: 45px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+  z-index: 9999;
+}
+
+.nav {
+  position: relative;
+
+  width: 20%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  color: #626a73;
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nav svg {
+  width: 30px;
+  height: 30px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav.active {
+  color: #0879d1;
+}
+
+.nav.active::before {
+  content: "";
+
+  position: absolute;
+
+  width: 105px;
+  height: 55px;
+
+  top: 9px;
+
+  background: #e8f3ff;
+  border-radius: 35px;
+
+  z-index: -1;
+}
+
+.cart-nav {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+
+  top: 12px;
+  right: 24px;
+
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff4d5a;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+  font-weight: 700;
+  }
+
+/* ==========================================
+   CART BADGE
+========================================== */
+
+.cart-icon-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cart-count{
+  position:absolute;
+  top:-7px;
+  right:-13px;
+
+  min-width:17px;
+  height:17px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 3px;
+
+  border-radius:50px;
+
+  background:#ff6900;
+  color:#fff;
+
+  font-size:9px;
+  font-weight:900;
+
+  border:2px solid #fff;
+}
+
+
+/* ==========================================
+   MOBILE SAFETY
+========================================== */
+
+@media(max-width:360px){
+
+  .cart-product-img{
+    width:78px;
+    height:78px;
+  }
+
+  .recommend-card img{
+    height:125px;
+  }
+
+  .recommend-info h4{
+    font-size:13px;
+  }
+
+}
+
+  
+
+
+/* ==========================================
+   TOUCH FEEDBACK
+========================================== */
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+button:active{
+  transform:scale(.97);
+}
+  
+
+</style>
+
+<script src="api.js"></script>
+
+<style id="maggie-universal-bottom-navigation">
+/* Universal fixed navigation: identical on every customer page */
+html{scroll-padding-bottom:calc(76px + env(safe-area-inset-bottom)) !important;}
+body{padding-bottom:calc(88px + env(safe-area-inset-bottom)) !important;}
+.bottom-nav{position:fixed !important;left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;transform:none !important;width:100% !important;max-width:none !important;height:calc(66px + env(safe-area-inset-bottom)) !important;min-height:calc(66px + env(safe-area-inset-bottom)) !important;box-sizing:border-box !important;display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-around !important;gap:0 !important;margin:0 !important;padding:5px 4px calc(5px + env(safe-area-inset-bottom)) !important;background:rgba(255,255,255,.98) !important;border-top:1px solid #eadfd3 !important;box-shadow:0 -4px 18px rgba(0,0,0,.09) !important;z-index:2147483000 !important;visibility:visible !important;opacity:1 !important;pointer-events:auto !important;}
+.bottom-nav .nav-item{position:static !important;flex:1 1 20% !important;width:20% !important;max-width:20% !important;min-width:0 !important;height:54px !important;min-height:54px !important;margin:0 !important;padding:5px 0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;gap:3px !important;box-sizing:border-box !important;text-decoration:none !important;border:0 !important;border-radius:10px !important;background:transparent !important;color:#777 !important;font-size:11px !important;line-height:1.1 !important;white-space:nowrap !important;transform:none !important;}
+.bottom-nav .nav-item svg{display:block !important;width:21px !important;height:21px !important;min-width:21px !important;min-height:21px !important;flex:0 0 21px !important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block !important;margin:0 !important;padding:0 !important;font-size:10px !important;line-height:12px !important;font-weight:500 !important;}
+.bottom-nav .nav-item.active{color:#e56b24 !important;background:transparent !important;font-weight:700 !important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700 !important;}
+@media(min-width:700px){.bottom-nav{left:50% !important;right:auto !important;transform:translateX(-50%) !important;width:min(100%,520px) !important;border-left:1px solid #eadfd3 !important;border-right:1px solid #eadfd3 !important;border-radius:16px 16px 0 0 !important;}}
+</style>
+<!-- maggie-nav-prefetch -->
+
+<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="categories.html" as="document">
+<link rel="prefetch" href="cart.html" as="document">
+<link rel="prefetch" href="orders.html" as="document">
+<link rel="prefetch" href="account.html" as="document">
+</head>
+
+
+<body>
+
+  <div class="container cart-page">
+
+    <!-- =========================
+         CART HEADER
+    ========================== -->
+
+    <header class="cart-header">
+
+      <button
+        class="cart-back-btn"
+        onclick="history.back()"
+        aria-label="Go back"
+      >
+        ←
+      </button>
+
+
+      <div class="cart-header-text">
+
+        <small>YOUR CART</small>
+
+        <h1>Maggie Lover</h1>
+
+        <p>
+          Fresh food, ready to order
+        </p>
+
+      </div>
+
+
+      <div class="cart-header-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.2"/>
+  <circle cx="18" cy="20" r="1.2"/>
+        </svg>
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         CART PRODUCTS
+    ========================== -->
+
+    <main>
+
+      <section id="cartItems">
+
+        <!-- Cart products will appear here -->
+
+      </section>
+
+
+      <!-- =========================
+           BILL SUMMARY
+      ========================== -->
+
+      <section id="cartSummary">
+
+        <!-- Bill summary will appear here -->
+
+      </section>
+
+
+      <!-- =========================
+           RECOMMENDATIONS
+      ========================== -->
+
+      <section class="recommend-section">
+
+        <div class="recommend-header">
+
+          <div>
+
+            <small>YOU MAY ALSO LIKE</small>
+
+            <h2>
+              Recommend for You
+            </h2>
+
+          </div>
+
+          <span>
+            🔥 Popular
+          </span>
+
+        </div>
+
+
+        <div
+          id="recommendSlider"
+          class="recommend-slider"
+        >
+
+          <!-- Products will appear here -->
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- Bottom spacing -->
+
+    <div style="height:120px;"></div>
+
+  </div>
+
+
+  <!-- =========================
+       BOTTOM NAVIGATION
+  ========================== -->
+
+  <nav class="bottom-nav">
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 10.5L12 3l9 7.5"/>
+  <path d="M5 9.5V21h14V9.5"/>
+  <path d="M9 21v-6h6v6"/>
+</svg>
+<small>Home</small>
+</a>
+
+<a
+  class="nav-item"
+  href="categories.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="6" height="6" rx="1"/>
+  <rect x="14" y="4" width="6" height="6" rx="1"/>
+  <rect x="4" y="14" width="6" height="6" rx="1"/>
+  <rect x="14" y="14" width="6" height="6" rx="1"/>
+ </svg>
+<small>Categories</small>
+</a>
+
+<a
+  class="nav-item active"
+  href="cart.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.2"/>
+  <circle cx="18" cy="20" r="1.2"/>
+</svg>
+<small>Cart</small>
+</a>
+
+<a
+  class="nav-item"
+  href="orders.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 7h14v14H5z"/>
+  <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+ </svg>
+<small>Orders</small>
+</a>
+
+<a
+  class="nav-item"
+  href="account.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/>
+</svg>
+<small>Account</small>
+</a>
+
+</nav>
+
+<script>
+function normalizeImagePath(image){
+  if(!image) return "";
+  return String(image).replace(/^\.\.\/assets\//, "assets/").replace(/^\.\/assets\//, "assets/");
+}
+
+
+/* ==========================================
+   MAGGIE LOVER — CART SYSTEM
+========================================== */
+
+
+/* ==========================================
+   GET CART
+========================================== */
+
+function getCart(){
+
+  try{
+
+    const savedCart =
+      localStorage.getItem("maggieCart");
+
+    if(!savedCart){
+      return [];
+    }
+
+    const cart =
+      JSON.parse(savedCart);
+
+    return Array.isArray(cart)
+      ? cart
+      : [];
+
+  }catch(error){
+
+    console.error(
+      "Cart loading error:",
+      error
+    );
+
+    return [];
+
+  }
+
+}
+
+
+/* ==========================================
+   EXACT PRODUCT CLICK
+   CART → UNIVERSAL PRODUCT PAGE
+========================================== */
+
+function openExactCartProduct(index){
+
+  const cart = getCart();
+
+  if(
+    !Array.isArray(cart) ||
+    !cart[index]
+  ){
+    return;
+  }
+
+  const item = cart[index];
+
+  const selectedProduct = {
+
+    id:
+      item.id,
+
+    category:
+      item.category || "",
+
+    name:
+      item.name || "",
+
+    price:
+      item.price || 0,
+
+    image:
+      item.image || "",
+
+    description:
+      item.description || "",
+
+    tags:
+      Array.isArray(item.tags)
+        ? item.tags
+        : []
+
+  };
+
+  localStorage.setItem(
+    "selectedProduct",
+    JSON.stringify(selectedProduct)
+  );
+
+  window.location.href =
+    "product.html?id=" +
+    encodeURIComponent(
+      String(item.id)
+    );
+
+}
+
+
+/* ==========================================
+   SAVE CART
+========================================== */
+
+function saveCart(cart){
+
+  localStorage.setItem(
+    "maggieCart",
+    JSON.stringify(cart)
+  );
+
+}
+
+
+/* ==========================================
+   CART COUNT
+========================================== */
+
+function updateCartCount(){
+
+  const cart = getCart();
+
+  const count =
+    cart.reduce(
+      (total,item) =>
+        total + Number(item.qty || 0),
+      0
+    );
+
+  const badge =
+    document.getElementById(
+      "bottomCartCount"
+    );
+
+  if(badge){
+
+    badge.innerText = count;
+
+    badge.style.display =
+      count > 0
+        ? "flex"
+        : "none";
+
+  }
+
+}
+
+/* ==========================================
+   CHANGE QUANTITY
+========================================== */
+
+function changeQty(index, change){
+
+  const cart = getCart();
+
+  if(!cart[index]){
+    return;
+  }
+
+
+  let currentQty =
+    Number(cart[index].qty || 1);
+
+
+  currentQty += change;
+
+
+  /* REMOVE WHEN ZERO */
+
+  if(currentQty <= 0){
+
+    cart.splice(index,1);
+
+  }else{
+
+    cart[index].qty =
+      currentQty;
+
+  }
+
+
+  saveCart(cart);
+
+  renderCart();
+
+}
+
+
+/* ==========================================
+   REMOVE PRODUCT
+========================================== */
+
+function removeItem(index){
+
+  const cart = getCart();
+
+  if(!cart[index]){
+    return;
+  }
+
+
+  cart.splice(index,1);
+
+  saveCart(cart);
+
+  renderCart();
+
+}
+
+
+/* ==========================================
+   ESCAPE HTML
+   Prevents broken HTML if product name
+   contains special characters.
+========================================== */
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================================
+   RENDER CART
+========================================== */
+
+function renderCart(){
+
+  const cart =
+    getCart();
+
+  const cartItems =
+    document.getElementById(
+      "cartItems"
+    );
+
+  const cartSummary =
+    document.getElementById(
+      "cartSummary"
+    );
+
+
+  if(!cartItems || !cartSummary){
+    return;
+  }
+
+
+  /* ========================================
+     EMPTY CART
+  ======================================== */
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML = `
+
+      <div class="empty-cart">
+
+        <div class="empty-cart-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.4"/>
+  <circle cx="18" cy="20" r="1.4"/>
+</svg>
+        </div>
+
+        <h2>
+          Your Cart is Empty
+        </h2>
+
+        <p>
+          Looks like you haven't added
+          anything delicious yet.
+        </p>
+
+        <a
+          href="index.html"
+          class="start-order-btn"
+        >
+          Start Ordering →
+        </a>
+
+      </div>
+
+    `;
+
+
+    cartSummary.innerHTML = "";
+
+
+    updateCartCount();
+
+    return;
+
+  }
+
+
+  /* ========================================
+     CART HAS PRODUCTS
+  ======================================== */
+
+  let subtotal = 0;
+
+  let totalItems = 0;
+
+
+  cartItems.innerHTML = `
+
+    <div class="cart-items-title">
+
+      <h2>
+        Your Items
+      </h2>
+
+      <span id="itemsCount">
+        0 items
+      </span>
+
+    </div>
+
+  `;
+
+
+  cart.forEach(
+    (item,index) => {
+
+      const price =
+        Number(item.price) || 0;
+
+
+      const qty =
+        Number(item.qty) || 1;
+
+
+      const itemTotal =
+        price * qty;
+
+
+      subtotal +=
+        itemTotal;
+
+
+      totalItems +=
+        qty;
+
+
+      const name =
+        escapeHTML(
+          item.name ||
+          "Food Item"
+        );
+
+
+      const image =
+        escapeHTML(
+          item.image || ""
+        );
+
+
+      /* ======================================
+         CART PRODUCT
+         CARD CLICK → EXACT PRODUCT
+      ====================================== */
+
+      cartItems.innerHTML += `
+
+        <div
+          class="cart-product"
+          onclick="openExactCartProduct(${index})"
+          style="cursor:pointer;"
+        >
+
+          <img
+            src="${normalizeImagePath(image)}"
+            class="cart-product-img"
+            alt="${name}"
+            onerror="
+              this.src='https://placehold.co/300x300?text=Food';
+            "
+          >
+
+
+          <div class="cart-product-info">
+
+            <h3>
+              ${name}
+            </h3>
+
+
+            <div class="cart-product-price">
+              ₹${price}
+            </div>
+
+
+            <div class="quantity-box">
+
+              <button
+                type="button"
+                onclick="
+                  event.stopPropagation();
+                  changeQty(${index},-1)
+                "
+              >
+                −
+              </button>
+
+
+              <span>
+                ${qty}
+              </span>
+
+
+              <button
+                type="button"
+                onclick="
+                  event.stopPropagation();
+                  changeQty(${index},1)
+                "
+              >
+                +
+              </button>
+
+            </div>
+
+
+            <div class="cart-product-total">
+
+              Item Total:
+              ₹${itemTotal}
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="remove-cart-btn"
+            onclick="
+              event.stopPropagation();
+              removeItem(${index})
+            "
+            aria-label="Remove item"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M8 12h8"/>
+</svg>
+          </button>
+
+        </div>
+
+      `;
+
+    }
+  );
+
+
+  /* ========================================
+     ITEM COUNT
+  ======================================== */
+
+  const itemsCount =
+    document.getElementById(
+      "itemsCount"
+    );
+
+
+  if(itemsCount){
+
+    itemsCount.innerText =
+      totalItems +
+      (
+        totalItems === 1
+          ? " item"
+          : " items"
+      );
+
+  }
+
+
+  /* ========================================
+     DELIVERY CHARGE
+  ======================================== */
+
+  const deliveryFee =
+    50;
+
+
+  /* ========================================
+     GRAND TOTAL
+  ======================================== */
+
+  const grandTotal =
+    subtotal +
+    deliveryFee;
+
+
+  /* ========================================
+     BILL SUMMARY
+  ======================================== */
+
+  cartSummary.innerHTML = `
+
+    <div class="bill-summary">
+
+      <div class="bill-summary-title">
+        Bill Summary
+      </div>
+
+
+      <div class="bill-row">
+
+        <span>
+          Product Total
+        </span>
+
+        <strong>
+          ₹${subtotal}
+        </strong>
+
+      </div>
+
+
+      <div class="bill-row">
+
+        <span>
+          Delivery Charge
+        </span>
+
+        <strong>
+          ₹${deliveryFee}
+        </strong>
+
+      </div>
+
+
+      <div class="delivery-note">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 6h11v11H3z"/>
+  <path d="M14 10h4l3 3v4h-7z"/>
+  <circle cx="7" cy="19" r="1.5"/>
+  <circle cx="18" cy="19" r="1.5"/>
+</svg> Delivery charge is ₹50
+
+      </div>
+
+
+      <div class="bill-divider"></div>
+
+
+      <div class="grand-total">
+
+        <span>
+          Grand Total
+        </span>
+
+        <strong>
+          ₹${grandTotal}
+        </strong>
+
+      </div>
+
+
+      <a
+        href="checkout.html"
+        class="checkout-btn"
+      >
+        Proceed to Checkout →
+      </a>
+
+    </div>
+
+  `;
+
+
+  /* UPDATE BADGE */
+
+  updateCartCount();
+
+}
+
+
+/* ==========================================
+   INITIALIZE CART
+========================================== */
+
+renderCart();
+
+</script>
+
+<script>
+
+/* ==========================================
+   MAGGIE LOVER
+   RECOMMEND FOR YOU — PRODUCT LOADER
+========================================== */
+
+let recommendationProducts = [];
+
+
+/* ==========================================
+   LOAD PRODUCTS.JS
+========================================== */
+
+function loadProductDatabase(){
+
+  return new Promise((resolve) => {
+
+    /* Already loaded */
+
+    if(
+      Array.isArray(window.products) &&
+      window.products.length > 0
+    ){
+
+      recommendationProducts =
+        window.products;
+
+      resolve(
+        recommendationProducts
+      );
+
+      return;
+
+    }
+
+
+    /* Load products.js */
+
+    const script =
+      document.createElement("script");
+
+    script.src =
+      "products.js";
+
+
+    script.onload = function(){
+
+      if(
+        Array.isArray(window.products)
+      ){
+
+        recommendationProducts =
+          window.products;
+
+      }else{
+
+        recommendationProducts =
+          [];
+
+      }
+
+
+      resolve(
+        recommendationProducts
+      );
+
+    };
+
+
+    script.onerror = function(){
+
+      console.error(
+        "products.js could not be loaded."
+      );
+
+      recommendationProducts =
+        [];
+
+      resolve([]);
+
+    };
+
+
+    document.body.appendChild(
+      script
+    );
+
+  });
+
+}
+
+
+/* ==========================================
+   GET PRODUCTS
+========================================== */
+
+function getAllProducts(){
+
+  if(
+    Array.isArray(window.products)
+  ){
+
+    return window.products;
+
+  }
+
+  return recommendationProducts;
+
+}
+
+
+/* ==========================================
+   ADD PRODUCT TO CART
+========================================== */
+
+function addRecommendedProduct(
+  productId
+){
+
+  const products =
+    getAllProducts();
+
+
+  const product =
+    products.find(
+      item =>
+        Number(item.id) ===
+        Number(productId)
+    );
+
+
+  if(!product){
+
+    console.log(
+      "Product not found:",
+      productId
+    );
+
+    return;
+
+  }
+
+
+  const cart =
+    getCart();
+
+
+  const existing =
+    cart.find(
+      item =>
+        Number(item.id) ===
+        Number(product.id)
+    );
+
+
+  if(existing){
+
+    existing.qty =
+      Number(existing.qty || 0) + 1;
+
+  }else{
+
+    cart.push({
+
+      id:
+        product.id,
+
+      category:
+        product.category,
+
+      name:
+        product.name,
+
+      price:
+        Number(product.price) || 0,
+
+      image:
+        product.image,
+
+      description:
+        product.description,
+
+      tags:
+        product.tags,
+
+      qty:
+        1
+
+    });
+
+  }
+
+
+  saveCart(cart);
+
+  renderCart();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  }
+
+  /* ==========================================
+   OPEN EXACT PRODUCT FROM CART
+========================================== */
+
+function openExactCartProduct(index){
+
+  const cart = getCart();
+
+  if(!cart[index]){
+    return;
+  }
+
+  const item = cart[index];
+
+  /* Universal product.html ke liye
+     exact selected product save karo */
+
+  const exactProduct = {
+
+    id:
+      item.id,
+
+    name:
+      item.name,
+
+    price:
+      Number(item.price) || 0,
+
+    category:
+      item.category || "",
+
+    image:
+      item.image || "",
+
+    description:
+      item.description || "",
+
+    tags:
+      item.tags || []
+
+  };
+
+
+  try{
+
+    localStorage.setItem(
+      "selectedProduct",
+      JSON.stringify(exactProduct)
+    );
+
+  }catch(error){
+
+    console.error(
+      "Selected product save error:",
+      error
+    );
+
+    return;
+
+  }
+
+
+  /*
+    Cart se product click karne par
+    universal product.html open hoga.
+  */
+
+  window.location.href =
+    "product.html";
+
+}
+
+
+/* ==========================================
+   SHOW ALL PRODUCTS
+========================================== */
+
+function renderRecommendations(){
+
+  const slider =
+    document.getElementById(
+      "recommendSlider"
+    );
+
+
+  if(!slider){
+    return;
+  }
+
+
+  const products =
+    getAllProducts();
+
+
+  /* NO PRODUCTS */
+
+  if(
+    !Array.isArray(products) ||
+    products.length === 0
+  ){
+
+    slider.innerHTML = `
+
+      <div
+        style="
+          grid-column:1/-1;
+          padding:25px;
+          text-align:center;
+          background:#fff;
+          border-radius:20px;
+          color:#8c8175;
+        "
+      >
+
+        Products are currently
+        unavailable.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  /* ========================================
+     SHOW ALL PRODUCTS
+  ======================================== */
+
+  slider.innerHTML =
+    products.map(
+      (product,index) => {
+
+        const id =
+          Number(product.id);
+
+
+        const name =
+          escapeHTML(
+            product.name ||
+            "Food Item"
+          );
+
+
+        const price =
+          Number(product.price) || 0;
+
+
+        const image =
+          escapeHTML(
+            product.image || ""
+          );
+
+
+        return `
+
+          <div
+            class="recommend-card"
+            onclick="openExactRecommendedProduct(${index})"
+            style="cursor:pointer;"
+          >
+
+            <img
+              src="${normalizeImagePath(image)}"
+              alt="${name}"
+              loading="lazy"
+              onerror="
+                this.src='https://placehold.co/600x500?text=Food';
+              "
+            >
+
+
+            <div class="recommend-info">
+
+              <h4>
+                ${name}
+              </h4>
+
+
+              <p>
+                ₹${price}
+              </p>
+
+
+              <button
+                type="button"
+                class="recommend-btn"
+                onclick="
+                  event.stopPropagation();
+                  addRecommendedProduct(${id})
+                "
+              >
+
+                + Add to Cart
+
+              </button>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+    ).join("");
+
+}
+
+
+/* ==========================================
+   OPEN EXACT RECOMMENDED PRODUCT
+========================================== */
+
+function openExactRecommendedProduct(index){
+
+  const products =
+    getAllProducts();
+
+
+  if(
+    !Array.isArray(products) ||
+    !products[index]
+  ){
+
+    return;
+
+  }
+
+
+  const product =
+    products[index];
+
+
+  const exactProduct = {
+
+    id:
+      product.id,
+
+    name:
+      product.name,
+
+    price:
+      Number(product.price) || 0,
+
+    category:
+      product.category || "",
+
+    image:
+      product.image || "",
+
+    description:
+      product.description || "",
+
+    tags:
+      product.tags || []
+
+  };
+
+
+  try{
+
+    localStorage.setItem(
+      "selectedProduct",
+      JSON.stringify(exactProduct)
+    );
+
+  }catch(error){
+
+    console.error(
+      "Selected recommendation product save error:",
+      error
+    );
+
+    return;
+
+  }
+
+
+  window.location.href =
+    "product.html";
+
+}
+
+
+/* ==========================================
+   START PRODUCT LOADING
+========================================== */
+
+async function initializeRecommendations(){
+
+  await loadProductDatabase();
+
+  renderRecommendations();
+
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+initializeRecommendations();
+
+</script>
+
+
+<script>
+
+/* ==========================================
+   FINAL CART PAGE INITIALIZATION
+========================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    /* Refresh cart */
+
+    renderCart();
+
+
+    /* Update bottom cart badge */
+
+    updateCartCount();
+
+
+    /* Load all recommendations */
+
+    initializeRecommendations();
+
+  }
+);
+
+
+/* ==========================================
+   KEEP CART UPDATED WHEN PAGE BECOMES ACTIVE
+========================================== */
+
+window.addEventListener(
+  "pageshow",
+  function(){
+
+    renderCart();
+
+    updateCartCount();
+
+  }
+);
+
+
+/* ==========================================
+   UPDATE CART IF ANOTHER PAGE CHANGES IT
+========================================== */
+
+window.addEventListener(
+  "storage",
+  function(event){
+
+    if(
+      event.key === "maggieCart"
+    ){
+
+      renderCart();
+
+      updateCartCount();
+
+    }
+
+  }
+);
+
+</script>
+
+  <script> 
+/* ==========================================
+   FINAL CART PAGE INITIALIZATION
+========================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    renderCart();
+
+    updateCartCount();
+
+    initializeRecommendations();
+
+  }
+);
+
+
+/* ==========================================
+   KEEP CART UPDATED WHEN PAGE BECOMES ACTIVE
+========================================== */
+
+window.addEventListener(
+  "pageshow",
+  function(){
+
+    renderCart();
+
+    updateCartCount();
+
+  }
+);
+
+
+/* ==========================================
+   UPDATE CART IF ANOTHER PAGE CHANGES IT
+========================================== */
+
+window.addEventListener(
+  "storage",
+  function(event){
+
+    if(
+      event.key === "maggieCart"
+    ){
+
+      renderCart();
+
+      updateCartCount();
+
+    }
+
+  }
+);
+    
+
+</script>
+
+<script src="catalog-sync.js"></script>
+
+<script id="maggie-universal-nav-active">
+document.addEventListener('DOMContentLoaded',function(){var p=(location.pathname.split('/').pop()||'index.html').toLowerCase();var map={'index.html':'index.html','categories.html':'categories.html','cart.html':'cart.html','orders.html':'orders.html','tracking.html':'orders.html','order-success.html':'orders.html','account.html':'account.html','search.html':'categories.html','see-all.html':'categories.html','product.html':'categories.html','checkout.html':'cart.html','buy.now.html':'cart.html'};var active=map[p]||'';document.querySelectorAll('.bottom-nav .nav-item').forEach(function(a){var href=(a.getAttribute('href')||'').toLowerCase();a.classList.toggle('active',!!active&&href===active);});});
+</script>
+
+<style id="maggie-final-identical-navigation">
+/* Final shared navigation override: same dimensions and appearance on every page */
+:root{--maggie-nav-height:66px;}
+.bottom-nav{position:fixed!important;inset:auto 0 0 0!important;top:auto!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;min-height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;box-sizing:border-box!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-around!important;gap:0!important;margin:0!important;padding:5px 4px calc(5px + env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.98)!important;border-top:1px solid #eadfd3!important;box-shadow:0 -4px 18px rgba(0,0,0,.09)!important;z-index:2147483000!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;}
+.bottom-nav .nav-item{position:static!important;flex:1 1 20%!important;width:20%!important;max-width:20%!important;min-width:0!important;height:54px!important;min-height:54px!important;margin:0!important;padding:5px 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;box-sizing:border-box!important;text-decoration:none!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#777!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important;transform:none!important;}
+.bottom-nav .nav-item svg{display:block!important;width:21px!important;height:21px!important;min-width:21px!important;min-height:21px!important;flex:0 0 21px!important;margin:0!important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block!important;margin:0!important;padding:0!important;font-size:10px!important;line-height:12px!important;font-weight:500!important;}
+.bottom-nav .nav-item.active{color:#e56b24!important;background:transparent!important;font-weight:700!important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700!important;}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important;}
+@media(min-width:700px){.bottom-nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(100%,520px)!important;border-left:1px solid #eadfd3!important;border-right:1px solid #eadfd3!important;border-radius:16px 16px 0 0!important;}}
+/* Keep navigation transitions smooth when supported; normal navigation remains fallback */
+@view-transition{navigation:auto;}
+::view-transition-old(root),::view-transition-new(root){animation-duration:160ms;}
+</style>
+</body>
+
+</html>

@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<title>My Orders - Maggie Lover</title>
+
+<style>
+html,body{touch-action:manipulation;-ms-touch-action:manipulation;overscroll-behavior-x:none;}
+
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff8ed;
+  color:#21160c;
+}
+
+.orders-page{
+  min-height:100vh;
+  max-width:700px;
+  margin:auto;
+  padding:16px 16px 115px;
+}
+
+/* ================= HEADER ================= */
+
+.top-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+.back-btn{
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:15px;
+  background:#fff;
+  color:#21160c;
+  font-size:25px;
+  box-shadow:0 8px 22px rgba(40,20,5,.08);
+}
+
+.header-title{
+  text-align:center;
+}
+
+.header-title small{
+  display:block;
+  color:#a17842;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.header-title strong{
+  font-size:20px;
+}
+
+.header-icon{
+  width:44px;
+  height:44px;
+  border-radius:15px;
+  background:#fff3d4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+/* ================= HERO ================= */
+
+.orders-hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:22px 20px;
+  margin-bottom:20px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255,183,3,.28),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #211407,
+      #4a2d12
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 20px 42px rgba(42,22,5,.22);
+}
+
+.orders-hero h1{
+  margin:0;
+  font-size:25px;
+}
+
+.orders-hero p{
+  margin:7px 0 0;
+  color:#f3dfc7;
+  font-size:13px;
+}
+
+.order-count{
+  display:inline-flex;
+  margin-top:14px;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#ffb703;
+  color:#211407;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* ================= FILTER ================= */
+
+.filter-row{
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding:2px 1px 8px;
+  margin-bottom:13px;
+
+  scrollbar-width:none;
+}
+
+.filter-row::-webkit-scrollbar{
+  display:none;
+}
+
+.filter-btn{
+  flex-shrink:0;
+  border:1px solid #eadcca;
+  background:#fff;
+  color:#725d47;
+  padding:9px 15px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.filter-btn.active{
+  background:#f47b00;
+  color:#fff;
+  border-color:#f47b00;
+}
+
+/* ================= ORDER CARD ================= */
+
+.order-card{
+  background:#fff;
+  border-radius:25px;
+  padding:17px;
+  margin:13px 0;
+
+  box-shadow:
+    0 10px 28px rgba(40,20,5,.075);
+
+  border:1px solid rgba(236,218,195,.7);
+}
+
+.order-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.order-id{
+  margin:0;
+  font-size:16px;
+}
+
+.order-date{
+  margin:5px 0 0;
+  color:#887565;
+  font-size:11px;
+}
+
+.status{
+  flex-shrink:0;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
+  text-transform:capitalize;
+}
+
+.status.preparing{
+  background:#fff0c7;
+  color:#a86400;
+}
+
+.status.confirmed{
+  background:#e8f7e9;
+  color:#24813b;
+}
+
+.status.delivered{
+  background:#e5f5ff;
+  color:#0873a5;
+}
+
+.status.cancelled{
+  background:#ffe8ec;
+  color:#d62845;
+}
+
+/* ================= PRODUCT IMAGES ================= */
+
+.order-images{
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  margin:16px 0 14px;
+  padding-bottom:2px;
+
+  scrollbar-width:none;
+}
+
+.order-images::-webkit-scrollbar{
+  display:none;
+}
+
+.order-images img{
+  width:70px;
+  height:70px;
+  flex-shrink:0;
+
+  object-fit:cover;
+
+  border-radius:17px;
+
+  background:#fff4df;
+
+  border:1px solid #f0dfc7;
+}
+
+/* ================= ITEM ROW ================= */
+
+.order-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+
+  padding:10px 0;
+
+  border-bottom:1px dashed #eadfd2;
+}
+
+.order-item:last-child{
+  border-bottom:0;
+}
+
+.item-name{
+  font-size:13px;
+  font-weight:700;
+  line-height:1.35;
+}
+
+.item-qty{
+  color:#8b7765;
+  font-size:11px;
+  margin-top:3px;
+}
+
+.item-price{
+  flex-shrink:0;
+  font-size:13px;
+  font-weight:900;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+  margin-top:9px;
+  padding-top:10px;
+  border-top:1px solid #eee3d7;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+
+  color:#77685a;
+  font-size:12px;
+}
+
+.summary-row strong{
+  color:#21160c;
+}
+
+.summary-row.total{
+  margin-top:4px;
+  padding-top:10px;
+
+  border-top:1px solid #eadfd2;
+
+  color:#21160c;
+  font-size:15px;
+  font-weight:900;
+}
+
+.summary-row.total strong{
+  color:#f47b00;
+  font-size:17px;
+}
+
+/* ================= ACTIONS ================= */
+
+.order-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:14px;
+}
+
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:44px;
+
+  border-radius:14px;
+
+  text-decoration:none;
+
+  font-size:12px;
+  font-weight:900;
+}
+
+.btn-primary{
+  background:#f47b00;
+  color:#fff;
+  box-shadow:0 7px 15px rgba(244,123,0,.2);
+}
+
+.btn-secondary{
+  background:#fff5e4;
+  color:#9a5c0a;
+  border:1px solid #f2dfc1;
+}
+
+/* ================= EMPTY ================= */
+
+.empty-orders{
+  background:#fff;
+  border-radius:28px;
+  padding:45px 20px;
+  text-align:center;
+
+  box-shadow:0 12px 30px rgba(40,20,5,.07);
+}
+
+.empty-icon{
+  width:82px;
+  height:82px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:28px;
+
+  background:#fff1d3;
+
+  font-size:40px;
+}
+
+.empty-orders h2{
+  margin:17px 0 7px;
+  font-size:21px;
+}
+
+.empty-orders p{
+  margin:0;
+  color:#817363;
+  font-size:13px;
+}
+
+.shop-btn{
+  display:inline-flex;
+  margin-top:18px;
+  padding:12px 20px;
+  border-radius:15px;
+  background:#f47b00;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:76px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+
+  padding:7px 4px;
+
+  background:rgba(255,255,255,.96);
+
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+
+  border-top:1px solid #eee4d8;
+
+  z-index:9999;
+}
+
+.nav-item{
+  min-width:58px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+
+  text-decoration:none;
+
+  color:#887665;
+
+  font-size:11px;
+  font-weight:800;
+}
+
+.nav-item span{
+  font-size:21px;
+}
+
+.nav-item.active{
+  color:#f47b00;
+}
+
+.cart-icon-wrap{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  right:-9px;
+  top:-7px;
+
+  min-width:17px;
+  height:17px;
+
+  padding:2px 4px;
+
+  border-radius:999px;
+
+  background:#f47b00;
+  color:#fff;
+
+  font-size:9px;
+  text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:380px){
+
+  .orders-page{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .orders-hero h1{
+    font-size:22px;
+  }
+
+  .order-card{
+    padding:14px;
+  }
+
+  .order-actions{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+<script src="api.js"></script>
+
+<style id="maggie-universal-bottom-navigation">
+/* Universal fixed navigation: identical on every customer page */
+html{scroll-padding-bottom:calc(76px + env(safe-area-inset-bottom)) !important;}
+body{padding-bottom:calc(88px + env(safe-area-inset-bottom)) !important;}
+.bottom-nav{position:fixed !important;left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;transform:none !important;width:100% !important;max-width:none !important;height:calc(66px + env(safe-area-inset-bottom)) !important;min-height:calc(66px + env(safe-area-inset-bottom)) !important;box-sizing:border-box !important;display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-around !important;gap:0 !important;margin:0 !important;padding:5px 4px calc(5px + env(safe-area-inset-bottom)) !important;background:rgba(255,255,255,.98) !important;border-top:1px solid #eadfd3 !important;box-shadow:0 -4px 18px rgba(0,0,0,.09) !important;z-index:2147483000 !important;visibility:visible !important;opacity:1 !important;pointer-events:auto !important;}
+.bottom-nav .nav-item{position:static !important;flex:1 1 20% !important;width:20% !important;max-width:20% !important;min-width:0 !important;height:54px !important;min-height:54px !important;margin:0 !important;padding:5px 0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;gap:3px !important;box-sizing:border-box !important;text-decoration:none !important;border:0 !important;border-radius:10px !important;background:transparent !important;color:#777 !important;font-size:11px !important;line-height:1.1 !important;white-space:nowrap !important;transform:none !important;}
+.bottom-nav .nav-item svg{display:block !important;width:21px !important;height:21px !important;min-width:21px !important;min-height:21px !important;flex:0 0 21px !important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block !important;margin:0 !important;padding:0 !important;font-size:10px !important;line-height:12px !important;font-weight:500 !important;}
+.bottom-nav .nav-item.active{color:#e56b24 !important;background:transparent !important;font-weight:700 !important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700 !important;}
+@media(min-width:700px){.bottom-nav{left:50% !important;right:auto !important;transform:translateX(-50%) !important;width:min(100%,520px) !important;border-left:1px solid #eadfd3 !important;border-right:1px solid #eadfd3 !important;border-radius:16px 16px 0 0 !important;}}
+</style>
+<!-- maggie-nav-prefetch -->
+
+<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="categories.html" as="document">
+<link rel="prefetch" href="cart.html" as="document">
+<link rel="prefetch" href="orders.html" as="document">
+<link rel="prefetch" href="account.html" as="document">
+</head>
+
+<body>
+
+<div class="orders-page">
+
+  <!-- HEADER -->
+
+  <div class="top-header">
+
+    <button
+      class="back-btn"
+      onclick="history.back()"
+    >
+      ‹
+    </button>
+
+    <div class="header-title">
+
+      <small>MAGGIE LOVER</small>
+
+      <strong>My Orders</strong>
+
+    </div>
+
+    <div class="header-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 7h14v14H5z"/>
+  <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+      </svg>
+    </div>
+
+  </div>
+
+
+  <!-- HERO -->
+
+  <div class="orders-hero">
+
+    <h1>Your Orders <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 3h14v18H5z"/>
+  <path d="M8 7h8"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+  <path d="M9 3v2h6V3"/>
+    </svg></h1>
+
+    <p>
+      Track your food, check previous orders
+      and order your favourites again.
+    </p>
+
+    <span
+      class="order-count"
+      id="orderCount"
+    >
+      0 Orders
+    </span>
+
+  </div>
+
+
+  <!-- FILTER -->
+
+  <div class="filter-row">
+
+    <button
+      class="filter-btn active"
+      onclick="filterOrders('all',this)"
+    >
+      All
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterOrders('preparing',this)"
+    >
+      Preparing
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterOrders('confirmed',this)"
+    >
+      Confirmed
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterOrders('delivered',this)"
+    >
+      Delivered
+    </button>
+
+  </div>
+
+
+  <!-- ORDERS -->
+
+  <div id="ordersList"></div>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+<a
+  class="nav-item"
+  href="index.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 10.5L12 3l9 7.5"/>
+  <path d="M5 9.5V21h14V9.5"/>
+  <path d="M9 21v-6h6v6"/>
+</svg>
+<small>Home</small>
+</a>
+
+<a
+  class="nav-item"
+  href="categories.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="6" height="6" rx="1"/>
+  <rect x="14" y="4" width="6" height="6" rx="1"/>
+  <rect x="4" y="14" width="6" height="6" rx="1"/>
+  <rect x="14" y="14" width="6" height="6" rx="1"/>
+ </svg>
+<small>Categories</small>
+</a>
+
+<a
+  class="nav-item"
+  href="cart.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h8.8a2 2 0 0 0 1.9-1.4L22 8H6"/>
+  <circle cx="10" cy="20" r="1.2"/>
+  <circle cx="18" cy="20" r="1.2"/>
+</svg>
+<small>Cart</small>
+</a>
+
+<a
+  class="nav-item active"
+  href="orders.html"
+>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 7h14v14H5z"/>
+  <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+  <path d="M8 11h8"/>
+  <path d="M8 15h5"/>
+ </svg>
+<small>Orders</small>
+</a>
+
+<a
+  class="nav-item"
+  href="account.html"
+>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="4"/>
+  <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/>
+</svg>
+<small>Account</small>
+</a>
+
+</nav>
+
+
+<script>
+function normalizeImagePath(image){
+  if(!image) return "";
+  return String(image).replace(/^\.\.\/assets\//, "assets/").replace(/^\.\/assets\//, "assets/");
+}
+
+
+/* ================= ORDERS DATA ================= */
+
+let orders =
+  JSON.parse(
+    localStorage.getItem("maggieOrders") || "[]"
+  );
+
+const ordersList =
+  document.getElementById("ordersList");
+
+let currentFilter = "all";
+
+
+/* ================= STATUS CLASS ================= */
+
+function getStatusClass(status){
+
+  const value =
+    String(status || "")
+      .toLowerCase();
+
+  if(value.includes("deliver"))
+    return "delivered";
+
+  if(value.includes("cancel"))
+    return "cancelled";
+
+  if(value.includes("confirm"))
+    return "confirmed";
+
+  return "preparing";
+}
+
+
+/* ================= ORDER CARD ================= */
+
+function createOrderCard(order){
+
+  const statusClass =
+    getStatusClass(order.status);
+
+  const items =
+    Array.isArray(order.items)
+      ? order.items
+      : [];
+
+
+  const images =
+    items
+      .filter(item => item.image)
+      .map(item => `
+        <img
+          src="${normalizeImagePath(item.image)}"
+          alt="${item.name || "Food"}"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+      `)
+      .join("");
+
+
+  const itemRows =
+    items
+      .map(item => {
+
+        const qty =
+          Number(item.qty || 1);
+
+        const price =
+          Number(item.price || 0);
+
+        return `
+
+          <div class="order-item">
+
+            <div>
+
+              <div class="item-name">
+                ${item.name || "Food Item"}
+              </div>
+
+              <div class="item-qty">
+                Quantity × ${qty}
+              </div>
+
+            </div>
+
+            <div class="item-price">
+              ₹${price * qty}
+            </div>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+
+  const total =
+    Number(order.total || 0);
+
+
+  return `
+
+    <div
+      class="order-card"
+      data-status="${statusClass}"
+    >
+
+      <div class="order-head">
+
+        <div>
+
+          <h3 class="order-id">
+            ${order.id || "Maggie Lover Order"}
+          </h3>
+
+          <p class="order-date">
+            ${order.createdAt || "Order placed"}
+          </p>
+
+        </div>
+
+        <span
+          class="status ${statusClass}"
+        >
+          ${order.status || "Preparing"}
+        </span>
+
+      </div>
+
+
+      ${
+        images
+          ? `
+            <div class="order-images">
+              ${images}
+            </div>
+          `
+          : ""
+      }
+
+
+      <div class="items-list">
+
+        ${itemRows}
+
+      </div>
+
+
+      <div class="summary">
+
+        <div class="summary-row">
+
+          <span>
+            Items
+          </span>
+
+          <strong>
+            ${items.length}
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row total">
+
+          <span>
+            Total Amount
+          </span>
+
+          <strong>
+            ₹${total}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-actions">
+
+        <a
+          class="btn btn-primary"
+          href="tracking.html"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 6h11v11H3z"/>
+  <path d="M14 10h4l3 3v4h-7z"/>
+  <circle cx="7" cy="19" r="1.5"/>
+  <circle cx="18" cy="19" r="1.5"/>
+</svg> Track Order
+        </a>
+
+        <button
+          class="btn btn-secondary"
+          onclick='viewOrder(${JSON.stringify(order).replace(/'/g,"&#39;")})'
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M12 11v6"/>
+  <path d="M12 8h.01"/>
+</svg> View Details
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* ================= RENDER ================= */
+
+async function renderOrders(){
+  // Shared backend is the source of truth; localStorage is only an offline fallback.
+  try {
+    const apiOrders=await MaggieAPI.get('/orders');
+    if(Array.isArray(apiOrders)){localStorage.setItem('maggieOrders',JSON.stringify(apiOrders));}
+  } catch(e) { console.warn('Orders API unavailable; using local cache.',e); }
+
+
+  orders =
+    JSON.parse(
+      localStorage.getItem("maggieOrders") || "[]"
+    );
+
+
+  document.getElementById(
+    "orderCount"
+  ).innerText =
+    `${orders.length} ${
+      orders.length === 1
+        ? "Order"
+        : "Orders"
+    }`;
+
+
+  if(orders.length === 0){
+
+    ordersList.innerHTML = `
+
+      <div class="empty-orders">
+
+        <div class="empty-icon">
+          📦
+        </div>
+
+        <h2>
+          No orders yet
+        </h2>
+
+        <p>
+          Your placed orders will appear here.
+        </p>
+
+        <a
+          href="index.html"
+          class="shop-btn"
+        >
+          🍜 Start Ordering
+        </a>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  let filtered = orders;
+
+
+  if(currentFilter !== "all"){
+
+    filtered =
+      orders.filter(order =>
+        getStatusClass(order.status)
+        === currentFilter
+      );
+
+  }
+
+
+  if(filtered.length === 0){
+
+    ordersList.innerHTML = `
+
+      <div class="empty-orders">
+
+        <div class="empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="11" cy="11" r="7"/>
+  <path d="M20 20l-4-4"/>
+</svg>
+        </div>
+
+        <h2>
+          No ${currentFilter} orders
+        </h2>
+
+        <p>
+          There are no orders in this category.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  ordersList.innerHTML =
+    filtered
+      .map(createOrderCard)
+      .join("");
+
+}
+
+
+/* ================= FILTER ================= */
+
+function filterOrders(
+  filter,
+  button
+){
+
+  currentFilter = filter;
+
+
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+
+  button.classList.add("active");
+
+
+  renderOrders();
+
+}
+
+
+/* ================= VIEW DETAILS ================= */
+
+function viewOrder(order){
+
+  const items =
+    Array.isArray(order.items)
+      ? order.items
+      : [];
+
+
+  let text =
+    "MAGGIE LOVER ORDER\n\n";
+
+
+  text +=
+    "Order ID: " +
+    (order.id || "N/A") +
+    "\n";
+
+
+  text +=
+    "Status: " +
+    (order.status || "Preparing") +
+    "\n";
+
+
+  text +=
+    "Date: " +
+    (order.createdAt || "N/A") +
+    "\n\n";
+
+
+  text +=
+    "ITEMS\n";
+
+
+  items.forEach(item => {
+
+    text +=
+      "• " +
+      item.name +
+      " × " +
+      (item.qty || 1) +
+      " — ₹" +
+      (
+        Number(item.price || 0) *
+        Number(item.qty || 1)
+      ) +
+      "\n";
+
+  });
+
+
+  text +=
+    "\nTotal: ₹" +
+    Number(order.total || 0);
+
+
+  alert(text);
+
+}
+
+
+/* ================= CART COUNT ================= */
+
+function updateCartCount(){
+
+  const cart =
+    JSON.parse(
+      localStorage.getItem("maggieCart") || "[]"
+    );
+
+
+  const count =
+    document.getElementById("cartCount");
+
+  const totalQty = Array.isArray(cart)
+    ? cart.reduce((total, item) => total + Number(item.qty || item.quantity || 1), 0)
+    : 0;
+
+  if(count){
+    count.innerText = totalQty;
+  }
+
+}
+
+
+/* ================= PAGE LOAD ================= */
+
+renderOrders();
+
+updateCartCount();
+
+
+/* ================= PAGE RETURN ================= */
+
+window.addEventListener(
+  "pageshow",
+  function(){
+
+    renderOrders();
+
+    updateCartCount();
+
+  }
+);
+
+</script>
+
+<script src="catalog-sync.js"></script>
+
+<script id="maggie-universal-nav-active">
+document.addEventListener('DOMContentLoaded',function(){var p=(location.pathname.split('/').pop()||'index.html').toLowerCase();var map={'index.html':'index.html','categories.html':'categories.html','cart.html':'cart.html','orders.html':'orders.html','tracking.html':'orders.html','order-success.html':'orders.html','account.html':'account.html','search.html':'categories.html','see-all.html':'categories.html','product.html':'categories.html','checkout.html':'cart.html','buy.now.html':'cart.html'};var active=map[p]||'';document.querySelectorAll('.bottom-nav .nav-item').forEach(function(a){var href=(a.getAttribute('href')||'').toLowerCase();a.classList.toggle('active',!!active&&href===active);});});
+</script>
+
+<style id="maggie-final-identical-navigation">
+/* Final shared navigation override: same dimensions and appearance on every page */
+:root{--maggie-nav-height:66px;}
+.bottom-nav{position:fixed!important;inset:auto 0 0 0!important;top:auto!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;min-height:calc(var(--maggie-nav-height) + env(safe-area-inset-bottom))!important;box-sizing:border-box!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-around!important;gap:0!important;margin:0!important;padding:5px 4px calc(5px + env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.98)!important;border-top:1px solid #eadfd3!important;box-shadow:0 -4px 18px rgba(0,0,0,.09)!important;z-index:2147483000!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;}
+.bottom-nav .nav-item{position:static!important;flex:1 1 20%!important;width:20%!important;max-width:20%!important;min-width:0!important;height:54px!important;min-height:54px!important;margin:0!important;padding:5px 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;box-sizing:border-box!important;text-decoration:none!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#777!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important;transform:none!important;}
+.bottom-nav .nav-item svg{display:block!important;width:21px!important;height:21px!important;min-width:21px!important;min-height:21px!important;flex:0 0 21px!important;margin:0!important;}
+.bottom-nav .nav-item small,.bottom-nav .nav-item span{display:block!important;margin:0!important;padding:0!important;font-size:10px!important;line-height:12px!important;font-weight:500!important;}
+.bottom-nav .nav-item.active{color:#e56b24!important;background:transparent!important;font-weight:700!important;}
+.bottom-nav .nav-item.active small,.bottom-nav .nav-item.active span{font-weight:700!important;}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important;}
+@media(min-width:700px){.bottom-nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(100%,520px)!important;border-left:1px solid #eadfd3!important;border-right:1px solid #eadfd3!important;border-radius:16px 16px 0 0!important;}}
+/* Keep navigation transitions smooth when supported; normal navigation remains fallback */
+@view-transition{navigation:auto;}
+::view-transition-old(root),::view-transition-new(root){animation-duration:160ms;}
+</style>
+</body>
+
+</html>
